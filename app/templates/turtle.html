@@ -5,9 +5,21 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
 <script src="../static/dist/skulpt.min.js" type="text/javascript"></script> 
 <script src="../static/dist/skulpt-stdlib.js" type="text/javascript"></script> 
+<link rel="stylesheet" type="text/css" href="../static/codemirror/codemirror.css">
+<link rel="stylesheet" type="text/css" href="../static/codemirror/monokai.css">
+<script src="../static/codemirror/codemirror.js" type="text/javascript"></script>
+<script src="../static/codemirror/python.js" type="text/javascript"></script> 
 </head> 
 <body> 
-<script type="text/javascript"> 
+<script type="text/javascript">
+var editor; 
+window.onload = function () { 
+    editor = CodeMirror.fromTextArea(document.getElementById("code"),{
+        lineNumbers: true,
+        theme: "monokai",
+        mode:  "python"
+    });
+  };
 // output functions are configurable.  This one just appends some text
 // to a pre element.
 function outf(text) { 
@@ -25,7 +37,8 @@ function builtinRead(x) {
 // configure the output function
 // call Sk.importMainWithBody()
 function runit() { 
-   var prog = document.getElementById("yourcode").value; 
+   //var prog = document.getElementById("code").value;
+   var prog = editor.getValue();
    var mypre = document.getElementById("output"); 
    mypre.innerHTML = ''; 
    Sk.pre = "output";
@@ -49,19 +62,18 @@ function runit() {
 </div>
 <div class="col-md-6">
 <form> 
-<textarea id="yourcode" cols="40" rows="10">import turtle
+<textarea id="code" cols="40" rows="10">import turtle
 
 t = turtle.Turtle()
 t.forward(100)
 
-print "Hello World" 
+print "Hello World"
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
 <pre id="output" ></pre> 
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
-
 </div> <!--col-md-6-->
 </body> 
 </html>
