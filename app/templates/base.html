@@ -5,15 +5,19 @@
 <title>Coding Blind</title>
 <script>
 var isNavOpen = false;
+var msg = new SpeechSynthesisUtterance();
+
+function speak(text) {
+  speechSynthesis.pause();
+  speechSynthesis.cancel();
+  msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  speechSynthesis.speak(msg);
+  speechSynthesis.resume();
+}
 
 function runCode() {
   console.log('fixme');
-}
-
-function speak(text) {
-  var msg = new SpeechSynthesisUtterance();
-  msg.text = text;
-  speechSynthesis.speak(msg);
 }
 
 function openNav() {
@@ -34,7 +38,7 @@ function closeNav() {
 }
 
 function doc_keyUp(e) {
-
+    e.preventDefault();
     // this would test for whichever key is 40 and the ctrl key at the same time
     if (e.altKey) {
       if (e.keyCode == 72) { // Alt+H
@@ -56,7 +60,6 @@ function doc_keyUp(e) {
 }
 // register the handler 
 document.addEventListener('keyup', doc_keyUp, false);
-
 
 </script>
 
