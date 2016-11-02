@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from content import lessons
 
 @app.route('/')
 @app.route('/index')
@@ -10,4 +11,4 @@ def index():
 
 @app.route('/turtle')
 def turtle():
-	return render_template('turtle.html')
+	return render_template('turtle.html', heading=lessons[1]["heading"], content=lessons[1]["sections"][0])
