@@ -5,7 +5,6 @@ from content import lessons
 @app.route('/')
 @app.route('/index')
 def index():
-	user = {'nickname':'Nick'}
 	return render_template('index.html')
 
 
