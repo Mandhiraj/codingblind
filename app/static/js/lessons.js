@@ -114,10 +114,11 @@ function doc_keyUp(e) {
       speak(navFocus.name);
     }
     else if (e.keyCode == 39) {
-      if (document.getElementById(navFocus.name) !== null)
-        speak(document.getElementById(navFocus.name).innerText);
+      var elt = document.getElementById(navFocus.name);
+      if (elt.innerText === "")
+        speak("There is no " + navFocus.name + " for this challenge");
       else
-        speak("hey hey hey hey");
+        speak(elt.innerText);
     }
     else if (e.keyCode == 40) {
       navFocus = incrementNavFocus(navFocus);
