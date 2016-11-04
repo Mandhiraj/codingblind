@@ -45,10 +45,6 @@ function doc_keyUp(e) {
         window.location.href = '/turtle';
       else if (e.keyCode == 82) // Alt+R
         runCode();
-      else if (e.keyCode == 81) // Alt+Q
-        speak(document.getElementById("problemDescription").innerText);
-      else if (e.keyCode == 87) // Alt+W
-        speak(document.getElementById("problemHint").innerText);
     }
     
 }
