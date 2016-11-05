@@ -1,4 +1,5 @@
 from flask import render_template
+from flask import request
 from app import app
 from content import lessons
 
@@ -10,4 +11,11 @@ def index():
 
 @app.route('/turtle')
 def turtle():
-	return render_template('turtle.html', heading=lessons[1]["heading"], content=lessons[1]["sections"][0])
+	lessonNum = request.args['lesson']
+	sectionNum = request.args['section']
+	maxLessons = []
+	for lesson in lessons:
+		maxLessons.append(len(lesson["sections"]))
+	
+	return render_template('turtle.html', content=lessons[int(lessonNum)-1]["sections"][int(sectionNum)-1],
+		lessonNum = int(lessonNum), sectionNum = int(sectionNum), maxLessons = maxLessons)

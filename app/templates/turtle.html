@@ -28,6 +28,13 @@
 <pre id="output" ></pre> 
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
+{% if lessonNum == maxLessons|length and maxLessons[lessonNum-1] == sectionNum %}
+<!--no link if final lesson (for now)-->
+{% elif maxLessons[lessonNum-1] == sectionNum %}
+<a id="NextLesson" href="/turtle?lesson={{lessonNum+1}}&section=1" style="visibility: hidden">Next Lesson</a>
+{% else %}
+<a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
+{% endif %} 
 </div> <!--col-md-6-->
 </body> 
 </html>

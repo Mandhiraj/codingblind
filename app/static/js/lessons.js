@@ -77,14 +77,15 @@ function runit() {
 
 
 var PAGECONTENT = {
-  HEADING: {value: 1, name: "Heading"},
-  CONTENT: {value: 2, name: "Content"},
-  CHALLENGE: {value: 3, name: "Challenge"},
-  EXAMPLE: {value: 4, name: "Example"},
-  HINTS: {value: 5, name: "Hints"}
+  HEADING: {value: 1, name: "Heading", htmlId: "Heading"},
+  CONTENT: {value: 2, name: "Content", htmlId: "Content"},
+  CHALLENGE: {value: 3, name: "Challenge", htmlId: "Challenge"},
+  EXAMPLE: {value: 4, name: "Example", htmlId: "Example"},
+  HINTS: {value: 5, name: "Hints", htmlId: "Hints"},
+  NEXTLESSON: {value: 6, name: "Next Lesson", htmlId: "NextLesson"}
 }
 
-var navFocus = PAGECONTENT.HINTS;
+var navFocus = PAGECONTENT.NEXTLESSON;
 
 function incrementNavFocus(navFocus) {
   switch (navFocus.value) {
@@ -92,17 +93,19 @@ function incrementNavFocus(navFocus) {
     case 2: return PAGECONTENT.CHALLENGE;
     case 3: return PAGECONTENT.EXAMPLE;
     case 4: return PAGECONTENT.HINTS;
-    case 5: return PAGECONTENT.HEADING;
+    case 5: return PAGECONTENT.NEXTLESSON;
+    case 6: return PAGECONTENT.HEADING;
   }
 }
 
 function decrementNavFocus(navFocus) {
   switch (navFocus.value) {
-    case 1: return PAGECONTENT.HINTS;
+    case 1: return PAGECONTENT.NEXTLESSON;
     case 2: return PAGECONTENT.HEADING;
     case 3: return PAGECONTENT.CONTENT;
     case 4: return PAGECONTENT.CHALLENGE;
     case 5: return PAGECONTENT.EXAMPLE;
+    case 6: return PAGECONTENT.HINTS;
   }
 }
 
@@ -114,11 +117,17 @@ function doc_keyUp(e) {
       speak(navFocus.name);
     }
     else if (e.keyCode == 39) {
-      var elt = document.getElementById(navFocus.name);
-      if (elt.innerText === "")
-        speak("There is no " + navFocus.name + " for this challenge");
+      var elt = document.getElementById(navFocus.htmlId);
+      if (elt !== null) {
+        if (navFocus === PAGECONTENT.NEXTLESSON)
+          elt.click();
+        else if (elt.innerText === "")
+          speak("There is no " + navFocus.name + " for this challenge");
+        else
+          speak(elt.innerText);
+      }
       else
-        speak(elt.innerText);
+        speak("This is the final lesson");
     }
     else if (e.keyCode == 40) {
       navFocus = incrementNavFocus(navFocus);
