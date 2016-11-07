@@ -112,26 +112,30 @@ function decrementNavFocus(navFocus) {
 function doc_keyUp(e) {
   e.preventDefault();
   if (e.altKey) {
-    if (e.keyCode == 38) {
-      navFocus = decrementNavFocus(navFocus);
-      speak(navFocus.name);
-    }
-    else if (e.keyCode == 39) {
-      var elt = document.getElementById(navFocus.htmlId);
-      if (elt !== null) {
-        if (navFocus === PAGECONTENT.NEXTLESSON)
-          elt.click();
-        else if (elt.innerText === "")
-          speak("There is no " + navFocus.name + " for this challenge");
-        else
-          speak(elt.innerText);
+    if(!isNavOpen){
+      if (e.keyCode == 38) {
+        navFocus = decrementNavFocus(navFocus);
+        speak(navFocus.name);
       }
-      else
-        speak("This is the final lesson");
-    }
-    else if (e.keyCode == 40) {
-      navFocus = incrementNavFocus(navFocus);
-      speak(navFocus.name);
+      else if (e.keyCode == 39) {
+        var elt = document.getElementById(navFocus.htmlId);
+        if (elt !== null) {
+          if (navFocus === PAGECONTENT.NEXTLESSON)
+            elt.click();
+          else if (elt.innerText === "")
+            speak("There is no " + navFocus.name + " for this challenge");
+          else
+            speak(elt.innerText);
+        }
+        else
+          speak("This is the final lesson");
+      }
+      else if (e.keyCode == 40) {
+        navFocus = incrementNavFocus(navFocus);
+        speak(navFocus.name);
+      }
+    }else{
+
     }
   }
 }

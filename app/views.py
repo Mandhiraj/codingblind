@@ -6,7 +6,10 @@ from content import lessons
 @app.route('/')
 @app.route('/index')
 def index():
-	return render_template('index.html')
+	maxLessons = []
+	for lesson in lessons:
+		maxLessons.append(len(lesson["sections"]))
+	return render_template('index.html', maxLessons = maxLessons)
 
 
 @app.route('/turtle')
