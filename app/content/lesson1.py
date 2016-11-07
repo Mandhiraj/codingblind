@@ -6,17 +6,20 @@ introduction = """Welcome to Lesson 1. In this lesson we will be introducing you
 				to the next section by using this alt n key combination."""
 
 section1 = {
-				'subheading' : 'Introduction to Python',
+				'subheading' : 'Introduction to Python and Printing',
 				'content' : """Welcome to the first section. When you move to a new section the content and problem will be automatically read to you, but if 
-					you want to hear it again you can press the key combination alt q at any time!""",
-				'challenge' : '',
+					you want to hear it again you can press the key combination alt q at any time! In this section we will learn how to output to the screen. 
+					To output something to the screen in Python you use the word 'print' followed by what you would like to output.""",
+				'challenge' : """For this problem try printing out your favorite number! Now press alt W to hear the hint for the problem. 
+					You can also use this key combination on every section to hear a hint but we recommend that you try to complete the challenge on your own first!""",
 				'examples' : [{
-								'input' : '',
-								'output' : ''
+								'input' : 'print 27',
+								'output' : '27'
 							}],
 				'hints' : [
-							"""To have the code read to you, use the arrow keys to navigate through the lines of code. The line you are on will be 
-								automatically be read to you. Try using the arrow keys now to hear the code!"""
+							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
+								automatically be read to you. Try out the challenge then using the arrow keys now to hear the code! Once you are done press alt r 
+								to run you code!"""
 						  ]
 			}
 
@@ -25,10 +28,8 @@ section2 = {
 				'content' : """Let's start  with a simple math problem! Programming languages are excellent	
 					for doing math because of their incredible speed. You can use the plus, dash, asterisk, or slash keys to do the 
 					four basic math operations: addition, subtraction, multiplication, and division.
-					Let's say we wanted to know what ten times twenty was. We could simply type the line print 10 * 20.""",
-				'challenge' : """The line of code for this problem has already been written for you in the coding area. It reads "print 10 * 20."
-					Now press alt W to hear the hint for the problem. You can also use this key combination on every section to hear a hint 
-					but we recommend that you try to complete the challenge on your own first!""",
+					Let's say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
+				'challenge' : """For this challenge try printing out 10 times 20""",
 				'examples' : [{
 								'input' : 'print 1 + 2',
 								'output' : '3'
@@ -62,7 +63,8 @@ section4 = {
 					We could assign the result of 10 * 20 to a variable and then print to the screen. Think of a variable 
 					as a holding place for a piece of information. If needed we can change the piece of information 
 					that the variable holds as we go. We can call this variable whatever we want, in this problem try naming 
-					your variable something that describes the information it holds, like result or answer.""",
+					your variable something that describes the information it holds, like result or answer. To set your variable's 
+					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
 					Press alt e to go to the example to see how to use a variable.""",
 				'examples' : [{
