@@ -86,6 +86,7 @@ var PAGECONTENT = {
 }
 
 var navFocus = PAGECONTENT.NEXTLESSON;
+var helpFocus = 0;
 
 function incrementNavFocus(navFocus) {
   switch (navFocus.value) {
@@ -134,8 +135,6 @@ function doc_keyUp(e) {
         navFocus = incrementNavFocus(navFocus);
         speak(navFocus.name);
       }
-    }else{
-
     }
   }
 }
