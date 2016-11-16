@@ -27,14 +27,20 @@ function substitutePunctuation(text){
       text = text.replace(text[i],' ' + punctuation[text[i]] +' ');
     }
   }  
+  return text;
 }
 
 function speak(text) {
+  console.log(text);
   text = substitutePunctuation(text);
+  console.log(text);
+
   speechSynthesis.pause();
   speechSynthesis.cancel();
   msg = new SpeechSynthesisUtterance();
   msg.text = text;
+  msg.lang = 'en-US';
+
   speechSynthesis.speak(msg);
   speechSynthesis.resume();
 }
