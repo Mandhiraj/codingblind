@@ -1,11 +1,46 @@
 var isNavOpen = false;
 var msg = new SpeechSynthesisUtterance();
 
+var punctuation = {
+  '\t':'tab',
+  ':':'colon',
+  '\'':'quote',
+  '\"':'double quote',
+  '=':'equal',
+  '+':'plus',
+  '-':'minus',
+  '<':'less than',
+  '>':'greater than',
+  '!':'exclamation mark',
+  '(':'open parantheses',
+  ')':'close parantheses',
+  '{':'open curly brace',
+  '}':'close curly brace',
+  '[':'open square bracket',
+  ']':'close square bracket',
+  ',':'comma'
+}
+
+function substitutePunctuation(text){
+  for (var i = 0; i < text.length; i++) {
+    if(text[i] in punctuation){
+      text = text.replace(text[i],' ' + punctuation[text[i]] +' ');
+    }
+  }  
+  return text;
+}
+
 function speak(text) {
+  console.log(text);
+  text = substitutePunctuation(text);
+  console.log(text);
+
   speechSynthesis.pause();
   speechSynthesis.cancel();
   msg = new SpeechSynthesisUtterance();
   msg.text = text;
+  msg.lang = 'en-US';
+
   speechSynthesis.speak(msg);
   speechSynthesis.resume();
 }
