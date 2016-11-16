@@ -43,22 +43,27 @@ section2 = {
 			}
 
 section3 = {
-				'subheading' : 'If and Else If',
-				'content' : """If statements are often accompanied by elif and else statments. Elif is an abbreviaton for
-							else-if. So you might have some code that goes like this: if something is true, do something. 
-							elif something else is true, do something else. else, do something else. It is important to note
-							that only one of these statements will run. Using if-elif-else  """,
+				'subheading' : 'If and Elif',
+				'content' : """If statements are often accompanied by elif statments. Elif is an abbreviaton for
+							else-if. They are formatted exactly like if statements, with the exception that the key word if
+							is replaced with elif. You can have have an if statement followed by multiple elif statements. 
+							Take a look at the code in the editor. You'll note that depending on what the value of the variable 
+							animal is set to at the top of the code, a different word gets printed. Read through the code and 
+							see if you can change animal so that you print each of three the words once.""",
 
 							########
-							# Finish
+							# animal = cat
+							# if animal == "cat":
+							#     print "meow"
+							# elif animal == "dog":
+							#	  print "bark"
+							# elif animal == "duck":
+							#     print "quack"
 							########
 
-				'challenge' : """Practice using these operators. Assign the result of an expression
-								to a variable called answer and then print answer. Do this first with an expression than 
-								evaluates to True and then with an expression that evaluates to False.""",
-				'examples' : [{ 
-								'input' : 'answer = 5 < 10\nprint answer',
-								'output' : 'True'		
+				'challenge' : """Add an elif statement to the code in the editor such that when the value of animal is set to
+								cow, moo gets printed.""",
+				'examples' : [{ 	
 							}],
 				'hints' : [
 							''
@@ -66,24 +71,92 @@ section3 = {
 			}
 
 section4 = {
-				'subheading' : 'More Complex If Logic',
-				'content' : """  """,
-				'challenge' : """  """,
+				'subheading' : 'Else',
+				'content' : """If and elif statements often end with an else statement. Else statments are similar except
+							they have no expression to evaluate. So you simply type else, followed by a colon. Then 
+							underneath, you put your tabbed over code like usual. If, elif, and else statments work 
+							together to control what code gets executed. In a series of statements, the next statement
+							only gets checked if the previous check was unsuccessful. It other words, else statements
+							only run when none of the conditions in the preceeding if and elif statements can be 
+							satisfied.
+							 """,
+
+							########
+							# animal = cat
+							# if animal == "cat":
+							#     print "meow"
+							# elif animal == "dog":
+							#	  print "bark"
+							# elif animal == "duck":
+							#     print "quack"
+							# else: 
+							#	  print ""
+							########
+
+				'challenge' : """Let's continue working with our example from the last section. Try adding
+								an else statement to the end of the code block that prints out "Not a valid animal"
+								when the variable animal is set to something other than cat, dog, or duck. Make sure 
+								you can run the code and "Not a valid animal" gets printed.""",
 				'examples' : [{ 
-							
+								''	
 							}],
 				'hints' : [
 							''
 						  ]
+}
+
+section5 = {
+				'subheading' : 'Using And',
+				'content' : """So far we have only looked at checking the value of one variable in our if statements.
+							However, sometimes we need our if statements to depend on multiple variables. We can use 
+							the key word and to do this. So our expression will only be true if both of the conditions 
+							joined together using and are true. This may sound confusing at first but you should
+							get a better understanding when you check out the code in the editor.""",
+
+							# rain = True
+							# wind = False
+							# if rain == True and wind == True:
+							#     print "It's storming!"
+
+				'challenge' : """Change the variables rain and wind so that "It's storming!" gets printed.""",
+				'examples' : [{ 
+								''
+							}],
+				'hints' : [
+							'Remember that both variables need to be true in order for the whole expression to be true.'
+						  ]
 			}
 
-lesson2 = {
+section6 = {
+				'subheading' : 'Using Or',
+				'content' : """Similar to the key word and, we can use the key word or in our if statements.
+							   So our expression will be true when at least 1 of the conditions is true, unlike
+							   when using and where both of the conditions have to be true. Check out the code
+							   in the editor to get a better understanding.""",
+
+							# rain = False
+							# wind = False
+							# if rain == True or wind == True:
+							#     print "It may be storming."
+
+				'challenge' : """Change the variables rain and wind so that "It may be storming" gets printed.""",
+				'examples' : [{ 
+								''
+							}],
+				'hints' : [
+							''
+						  ]
+			}			
+
+lesson3 = {
 			'heading' : heading,
 			'introduction' : introduction,
 			'sections' : [
 				section1,
 				section2,
 				section3,
-				section4
+				section4,
+				section5,
+				section6
 			]
 		  }
