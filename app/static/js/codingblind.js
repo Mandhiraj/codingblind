@@ -1,6 +1,7 @@
 var isNavOpen = false;
 var msg = new SpeechSynthesisUtterance();
 
+
 var punctuation = {
   '\t':'tab',
   ':':'colon',
@@ -18,7 +19,8 @@ var punctuation = {
   '}':'close curly brace',
   '[':'open square bracket',
   ']':'close square bracket',
-  ',':'comma'
+  ',':'comma',
+  '.':'dot'
 }
 
 function substitutePunctuation(text){
@@ -30,20 +32,49 @@ function substitutePunctuation(text){
   return text;
 }
 
-function speak(text) {
-  console.log(text);
-  text = substitutePunctuation(text);
-  console.log(text);
-
-  speechSynthesis.pause();
-  speechSynthesis.cancel();
+function setupSpeech(text) {
   msg = new SpeechSynthesisUtterance();
   msg.text = text;
   msg.lang = 'en-US';
+  msg.voiceURI = 'native';
+  msg.volume = 1; // 0 to 1
+  msg.rate = .8; // 0.1 to 10
+  msg.pitch = 1.1; //0 to 2
+  msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'english'; })[0];
+  return msg;
+}
+
+function speak_punc(text) {
+  text = substitutePunctuation(text);
+
+  speechSynthesis.pause();
+  speechSynthesis.cancel();
+
+  msg = setupSpeech(text);
 
   speechSynthesis.speak(msg);
   speechSynthesis.resume();
+
+//   speechSynthesis.getVoices().forEach(function(voice) {
+//   console.log(voice.name, voice.default ? '(default)' :'');
+// });
 }
+
+function speak(text) {
+  speechSynthesis.pause();
+  speechSynthesis.cancel();
+
+  msg = setupSpeech(text);
+
+  speechSynthesis.speak(msg);
+  speechSynthesis.resume();
+
+//   speechSynthesis.getVoices().forEach(function(voice) {
+//   console.log(voice.name, voice.default ? '(default)' :'');
+// });
+}
+
+
 
 function runCode() {
   console.log('fixme');

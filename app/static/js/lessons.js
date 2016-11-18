@@ -4,7 +4,7 @@ var prev_ln = 0;
 var focused = false;
 // speak the line number and then the contents of the line
 function speak_line(ln) {
-  speak("line " + ln + " " + editor.getLine(ln));
+  speak_punc("line " + ln + " " + editor.getLine(ln));
 }
 
 var cursorChanged = function(){
@@ -19,7 +19,7 @@ var cursorChanged = function(){
 
 var editorFocused = function(){
   focused = true;
-  speak("There are " + editor.lineCount() + " lines in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
+  speak_punc("There are " + editor.lineCount() + " lines in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
   //speak_line(editor.getCursor().line)
 }
 
@@ -67,11 +67,12 @@ function runit() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
    });
    myPromise.then(function(mod) {
-       console.log('success');
+      console.log('success');
+      speak('success. please navigate to the next lesson using the shortcut alt l.');
    },
-       function(err) {
-       console.log(err.toString());
+      function(err) {
        document.getElementById("output").innerText = err.toString();
+       speak("error" + err.toString());
    });
 } 
 
