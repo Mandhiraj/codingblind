@@ -32,9 +32,7 @@ section2 = {
 							to True.""",
 				'challenge' : """Go ahead and play with the code in the editor. Currently when you run it, nothing happens. 
 								Can you edit it so that \"It's raining!\" gets printed?""",
-								# rain = False
-								# if rain == True:
-								#     print "It's raining!"
+				'code' :	"""rain = False\nif rain == True:\n\tprint \"It\'s raining!\"""",
 				'examples' : [{ 
 							}],
 				'hints' : [
@@ -50,19 +48,9 @@ section3 = {
 							Take a look at the code in the editor. You'll note that depending on what the value of the variable 
 							animal is set to at the top of the code, a different word gets printed. Read through the code and 
 							see if you can change animal so that you print each of three the words once.""",
-
-							########
-							# animal = cat
-							# if animal == "cat":
-							#     print "meow"
-							# elif animal == "dog":
-							#	  print "bark"
-							# elif animal == "duck":
-							#     print "quack"
-							########
-
 				'challenge' : """Add an elif statement to the code in the editor such that when the value of animal is set to
 								cow, moo gets printed.""",
+				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
 				'examples' : [{ 	
 							}],
 				'hints' : [
@@ -78,25 +66,12 @@ section4 = {
 							together to control what code gets executed. In a series of statements, the next statement
 							only gets checked if the previous check was unsuccessful. It other words, else statements
 							only run when none of the conditions in the preceeding if and elif statements can be 
-							satisfied.
-							 """,
-
-							########
-							# animal = cat
-							# if animal == "cat":
-							#     print "meow"
-							# elif animal == "dog":
-							#	  print "bark"
-							# elif animal == "duck":
-							#     print "quack"
-							# else: 
-							#	  print ""
-							########
-
+							satisfied.""",
 				'challenge' : """Let's continue working with our example from the last section. Try adding
 								an else statement to the end of the code block that prints out "Not a valid animal"
 								when the variable animal is set to something other than cat, dog, or duck. Make sure 
 								you can run the code and "Not a valid animal" gets printed.""",
+				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
 				'examples' : [{ 
 								''	
 							}],
@@ -112,13 +87,8 @@ section5 = {
 							the key word and to do this. So our expression will only be true if both of the conditions 
 							joined together using and are true. This may sound confusing at first but you should
 							get a better understanding when you check out the code in the editor.""",
-
-							# rain = True
-							# wind = False
-							# if rain == True and wind == True:
-							#     print "It's storming!"
-
 				'challenge' : """Change the variables rain and wind so that "It's storming!" gets printed.""",
+				'code' :	"""rain = False\nwind = False\nif rain == True and wind == True:\n\tprint \"It\'s storming!\"""",
 				'examples' : [{ 
 								''
 							}],
@@ -140,6 +110,7 @@ section6 = {
 							#     print "It may be storming."
 
 				'challenge' : """Change the variables rain and wind so that "It may be storming" gets printed.""",
+				'code' :	"""rain = False\nwind = False\nif rain == True or wind == True:\n\tprint \"It may be storming.\"""",
 				'examples' : [{ 
 								''
 							}],
