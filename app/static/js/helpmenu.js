@@ -78,7 +78,7 @@ function doc_keyUp(e) {
             speak(helpText);
           else if(inLesson && lessonFocus != 0){
             inLesson = false;
-            speak("Lesson " + lessonFocus + " section " + sectionFocus)
+            speak("Lesson " + lessonFocus + " point " + sectionFocus)
           }
           else if(!inLesson){
             window.location.href = '/turtle?lesson='+lessonFocus+'&section='+sectionFocus;
@@ -98,7 +98,7 @@ function doc_keyUp(e) {
         else if(inLesson && lessonFocus != 0)
           speak("Lesson " + lessonFocus);
         else if(e.keyCode != 39)
-          speak("Lesson " + lessonFocus + " section " + sectionFocus);
+          speak("Lesson " + lessonFocus + " point " + sectionFocus);
       }
     }
     
