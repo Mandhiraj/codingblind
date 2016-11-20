@@ -10,6 +10,13 @@
 <script src="../static/codemirror/codemirror.js" type="text/javascript"></script>
 <script src="../static/codemirror/python.js" type="text/javascript"></script>
 <script src="../static/js/lessons.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	console.log('asdf');
+	$('#code').blur(function (event) {
+    setTimeout(function () { $("#code").focus(); }, 20);});
+</script>
+
 </head> 
 <body> 
 <div class="col-md-6">
@@ -41,8 +48,10 @@
 <a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
 {% else %}
 <a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
-<a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
-{% endif %} 
+<a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a> 
+{% endif %}
+<div style="display: none;" id="LessonNumber">{{ lessonNum }}</div>
+<div style="display: none;" id="SectionNumber">{{ sectionNum }}</div>
 </div> <!--col-md-6-->
 </body> 
 </html>
