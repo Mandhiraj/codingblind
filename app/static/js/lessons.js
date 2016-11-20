@@ -141,6 +141,19 @@ function doc_keyUp(e) {
         else
           speak("This is the final lesson");
       }
+      else if (e.keyCode == 37) { //alt+left
+        var elt = document.getElementById("PrevLesson");
+        if (elt !== null) {
+          if (navFocus === PAGECONTENT.NEXTLESSON)
+            elt.click();
+          else if (elt.innerText === "")
+            speak("There is no previous lesson for this challenge");
+          else
+            speak(elt.innerText);
+        }
+        else
+          speak("This is the first lesson");
+      }
       else if (e.keyCode == 40) {
         navFocus = incrementNavFocus(navFocus);
         speak(navFocus.name);
