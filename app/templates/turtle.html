@@ -29,11 +29,19 @@
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
 {% if lessonNum == maxLessons|length and maxLessons[lessonNum-1] == sectionNum %}
-<!--no link if final lesson (for now)-->
+<!--no next link if final lesson (for now)-->
+<a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
+{% elif lessonNum == 1 and sectionNum == 0 %}
+<a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
+{% elif sectionNum == 0 %}
+<a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
+<a id="PrevLesson" href="/turtle?lesson={{lessonNum-1}}&section={{maxLessons[lessonNum-2]}}" style="visibility: hidden">Previous Lesson</a>
 {% elif maxLessons[lessonNum-1] == sectionNum %}
-<a id="NextLesson" href="/turtle?lesson={{lessonNum+1}}&section=1" style="visibility: hidden">Next Lesson</a>
+<a id="NextLesson" href="/turtle?lesson={{lessonNum+1}}&section=0" style="visibility: hidden">Next Lesson</a>
+<a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
 {% else %}
 <a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
+<a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
 {% endif %} 
 </div> <!--col-md-6-->
 </body> 
