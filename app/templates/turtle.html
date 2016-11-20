@@ -10,17 +10,20 @@
 <script src="../static/codemirror/codemirror.js" type="text/javascript"></script>
 <script src="../static/codemirror/python.js" type="text/javascript"></script>
 <script src="../static/js/lessons.js" type="text/javascript"></script>
+<script src="../static/js/editor.js" type="text/javascript"></script>
+<script src="../static/js/ide.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 	console.log('asdf');
 	$('#code').blur(function (event) {
     setTimeout(function () { $("#code").focus(); }, 20);});
+	window.onpageshow = read_heading;
 </script>
 
 </head> 
 <body> 
 <div class="col-md-6">
-<h1 id="Heading">{{content["subheading"]}}</h1>
+<h1 id="Heading">§{{lessonNum}}.{{sectionNum}} <span id="subheading">{{content["subheading"]}}</span></h1>
 <p id="Content">{{content["content"]}}</p>
 <p id="Challenge">{{content["challenge"]}}</p>
 <p id="Example">{{content["example"]}}</p>
@@ -30,9 +33,10 @@
 <form> 
 <textarea id="code" cols="40" rows="10">{{content["code"]}}
 </textarea><br /> 
-<button type="button" onclick="runit()">Run</button> 
+<button type="button" onclick="runit({{content["output"]}})">Run</button> 
 </form> 
-<pre id="output" ></pre> 
+<pre id="output" style="visibility: hidden"></pre> 
+<p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Use alt with the arrow keys to advance to the next lesson.</p>
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
 {% if lessonNum == maxLessons|length and maxLessons[lessonNum-1] == sectionNum %}

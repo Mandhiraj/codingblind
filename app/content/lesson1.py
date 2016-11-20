@@ -24,7 +24,8 @@ section1 = {
 							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
 								automatically be read to you. Go to code using the alt space key combination and try out the challenge then use the arrow keys to hear the code you write! 
 								Once you are done using alt and the arrow key to choose the run option to run your code!"""
-						  ]
+						  ],
+				'output' : 'js'
 			}
 
 section2 = {
@@ -40,7 +41,8 @@ section2 = {
 							}],
 				'hints' : [
 							""""""
-						  ]
+						  ],
+				'output' : '200'
 			}
 
 section3 = {
@@ -58,7 +60,8 @@ section3 = {
 				'hints' : [
 							"""Remember that for the subtraction to be calculated before the multiplication you need to put an open parenthesis before 
 							5 minus 3 and put a close parenthesis after."""
-						  ]
+						  ],
+				'output' : '8'
 			}
 
 section4 = {
@@ -77,7 +80,8 @@ section4 = {
 							}],
 				'hints' : [
 							''
-						  ]
+						  ],
+				'output' : '200'
 			}
 
 section5 = {
@@ -96,7 +100,8 @@ section5 = {
 							}],
 				'hints' : [
 							''
-						  ]
+						  ],
+				'output' : 'js'
 			}
 
 
