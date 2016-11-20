@@ -33,7 +33,7 @@
 <form> 
 <textarea id="code" cols="40" rows="10">{{content["code"]}}
 </textarea><br /> 
-<button type="button" onclick="runit({{content["output"]}})">Run</button> 
+<button id="RunCode" type="button" onclick="runit({{content['output']}})">Run</button> 
 </form> 
 <pre id="output" style="visibility: hidden"></pre> 
 <p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Use alt with the arrow keys to advance to the next lesson.</p>
