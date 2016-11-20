@@ -2,24 +2,24 @@ heading = 'Introduction to Python with Math and Variables';
 
 introduction = """Welcome to Lesson 1. In this lesson we will be introducing you to the website coding environment and 
 				learning how to print output, do simple math operations and use variables! To get started with the first section 
-				of this lesson using the key combination alt n. As you finish each section and its coding challange you can navigate 
-				to the next section by using this alt n key combination."""
+				of this lesson using the key combination alt and the right arrow key."""
 
 section1 = {
 				'subheading' : 'Introduction to Python and Printing',
-				'content' : """Welcome to the first section. When you move to a new section the content and problem will be automatically read to you, but if 
-					you want to hear it again you can press the key combination alt q at any time! In this section we will learn how to output to the screen. 
+				'content' : """Welcome to the first section. As you can notice, when you move to a new section the problem heading will be automatically read to you! 
+					In this section we will learn how to output to the screen. 
 					To output something to the screen in Python you use the word 'print' followed by what you would like to output.""",
-				'challenge' : """For this problem try printing out your favorite number! Now press alt W to hear the hint for the problem. 
-					You can also use this key combination on every section to hear a hint but we recommend that you try to complete the challenge on your own first!""",
+				'challenge' : """For this problem try printing out your favorite number! Now press alt and the arrow keys to navigate to hear the hint for the problem. 
+					For every section, if there is a hint you can navigate this way to hear it but we recommend that you try to complete the challenge on your own first! 
+					Use the key combination alt and space to start coding!""",
 				'examples' : [{
 								'input' : 'print 27',
 								'output' : '27'
 							}],
 				'hints' : [
 							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
-								automatically be read to you. Try out the challenge then using the arrow keys now to hear the code! Once you are done press alt r 
-								to run you code!"""
+								automatically be read to you. Go to code using the alt space key combination and try out the challenge then use the arrow keys to hear the code you write! 
+								Once you are done using alt and the arrow key to choose the run option to run your code!"""
 						  ]
 			}
 
@@ -66,7 +66,7 @@ section4 = {
 					your variable something that describes the information it holds, like result or answer. To set your variable's 
 					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
-					Press alt e to go to the example to see how to use a variable.""",
+					Use alt and the arrow keys to navigate to the example option to see how to use a variable.""",
 				'examples' : [{
 								'input' : 'result = 1 + 2\nprint result',
 								'output' : '3'
@@ -85,7 +85,7 @@ section5 = {
 					parentheses around 5 minus 3 we could also first set a variable equal to this value then multiply the variable by 4 to 
 					get the same result.""",
 				'challenge' : """For this challenge setting a variable equal to 5 minus 3 then print out your variable multiplied by 4. 
-					If hearing an example of this would be helpful press alt e or you can attempt coding this on your own first!""",
+					If hearing an example of this would be helpful press navigate there with alt and the arrow keys or you can attempt coding this on your own first!""",
 				'examples' : [{
 								'input' : 'result = 1 + 1\nprint result * 2',
 								'output' : '4'
