@@ -86,10 +86,12 @@ var PAGECONTENT = {
   NEXTLESSON: {value: 6, name: "Next Lesson", htmlId: "NextLesson"}
 }
 
-document.onreadystatechange = function () {
+function read_heading() {
+  console.log('hello ready state change')
   var lessonNumber = document.getElementById("LessonNumber").textContent;
   var sectionNumber = document.getElementById("SectionNumber").textContent;
-  var message = "Lesson " + lessonNumber + " Section " + sectionNumber; 
+  var heading = $("#Heading").text();
+  var message = "Lesson " + lessonNumber + " Section " + sectionNumber + heading; 
   speak(message);
 }
 
