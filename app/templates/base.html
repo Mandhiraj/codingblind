@@ -41,18 +41,16 @@
       <a href="/" class="navbar-brand">Coding Blind</a>
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li class="active">
-            <a href="/">Home</a>
-        </li>
-          {% for lesson in maxLessons %}
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/">Home</a></li>
+<!--           {% for lesson in maxLessons %}
             <li class="active">
               <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
             </li>
-          {% endfor %}
-        <li class="active">
-            <a href="javascript:void(0)" class="closebtn" onclick="openNav()">Help</a>
-          </li>
+          {% endfor %} -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="javascript:void(0)" class="closebtn" onclick="openNav()">Help</a></li>
       </ul>
     </div>
   </div>
