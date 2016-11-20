@@ -15,13 +15,13 @@
 	console.log('asdf');
 	$('#code').blur(function (event) {
     setTimeout(function () { $("#code").focus(); }, 20);});
-	window.onload = read_heading;
+	window.onpageshow = read_heading;
 </script>
 
 </head> 
 <body> 
 <div class="col-md-6">
-<h1 id="Heading">{{content["subheading"]}}</h1>
+<h1 id="Heading">§{{lessonNum}}.{{sectionNum}} {{content["subheading"]}}</h1>
 <p id="Content">{{content["content"]}}</p>
 <p id="Challenge">{{content["challenge"]}}</p>
 <p id="Example">{{content["example"]}}</p>
