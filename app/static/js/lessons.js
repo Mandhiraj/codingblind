@@ -4,7 +4,8 @@ var PAGECONTENT = {
   CHALLENGE: {value: 3, name: "Challenge", htmlId: "Challenge"},
   EXAMPLE: {value: 4, name: "Example", htmlId: "Example"},
   HINTS: {value: 5, name: "Hints", htmlId: "Hints"},
-  NEXTLESSON: {value: 6, name: "Next Lesson", htmlId: "NextLesson"}
+  RUNCODE: {value: 6, name: "Run Code", htmlId: "RunCode"},
+  NEXTLESSON: {value: 7, name: "Next Lesson", htmlId: "NextLesson"}
 }
 
 function read_heading() {
@@ -25,8 +26,9 @@ function incrementNavFocus(navFocus) {
     case 2: return PAGECONTENT.CHALLENGE;
     case 3: return PAGECONTENT.EXAMPLE;
     case 4: return PAGECONTENT.HINTS;
-    case 5: return PAGECONTENT.NEXTLESSON;
-    case 6: return PAGECONTENT.HEADING;
+    case 5: return PAGECONTENT.RUNCODE;
+    case 6: return PAGECONTENT.NEXTLESSON;
+    case 7: return PAGECONTENT.HEADING;
   }
 }
 
@@ -38,6 +40,7 @@ function decrementNavFocus(navFocus) {
     case 4: return PAGECONTENT.CHALLENGE;
     case 5: return PAGECONTENT.EXAMPLE;
     case 6: return PAGECONTENT.HINTS;
+    case 7: return PAGECONTENT.RUNCODE;
   }
 }
 
@@ -52,7 +55,7 @@ function doc_keyUp(e) {
       else if (e.keyCode == 39) {
         var elt = document.getElementById(navFocus.htmlId);
         if (elt !== null) {
-          if (navFocus === PAGECONTENT.NEXTLESSON)
+          if (navFocus === PAGECONTENT.NEXTLESSON || navFocus === PAGECONTENT.RUNCODE)
             elt.click();
           else if (elt.innerText === "")
             speak("There is no " + navFocus.name + " for this challenge");
