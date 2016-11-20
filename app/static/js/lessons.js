@@ -86,6 +86,13 @@ var PAGECONTENT = {
   NEXTLESSON: {value: 6, name: "Next Lesson", htmlId: "NextLesson"}
 }
 
+document.onreadystatechange = function () {
+  var lessonNumber = document.getElementById("LessonNumber").textContent;
+  var sectionNumber = document.getElementById("SectionNumber").textContent;
+  var message = "Lesson " + lessonNumber + " Section " + sectionNumber; 
+  speak(message);
+}
+
 var navFocus = PAGECONTENT.NEXTLESSON;
 var helpFocus = 0;
 
