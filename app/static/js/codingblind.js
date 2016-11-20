@@ -20,7 +20,8 @@ var punctuation = {
   '[':'open square bracket',
   ']':'close square bracket',
   ',':'comma',
-  '.':'dot'
+  '.':'dot',
+  '\n':'newline'
 }
 
 function substitutePunctuation(text){
@@ -100,7 +101,7 @@ function closeNav() {
 var lessonFocus = 0;
 var sectionFocus = 1;
 var inLesson = true;
-var helpText = "To navigate press alt with the up or down arrow key to scroll between options. Press alt and the right arrow key to select that option. Press alt with the left arrow key to move back to the previous options. You can also press alt and h to exit the help menu."
+var helpText = "Press alt with different arrow keys to access all content. Use up and down to scroll through options and right to select an option. To start coding, press alt and the spacebar."
 
 function incrementHelpFocus(){
   if(inLesson){
