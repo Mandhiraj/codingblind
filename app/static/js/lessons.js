@@ -55,25 +55,33 @@ function builtinRead(x) {
 // get a reference to your pre element for output
 // configure the output function
 // call Sk.importMainWithBody()
-function runit() { 
-   //var prog = document.getElementById("code").value;
-   var prog = editor.getValue();
-   var mypre = document.getElementById("output"); 
-   mypre.innerHTML = ''; 
-   Sk.pre = "output";
-   Sk.configure({output:outf, read:builtinRead}); 
-   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-   var myPromise = Sk.misceval.asyncToPromise(function() {
-       return Sk.importMainWithBody("<stdin>", false, prog, true);
-   });
-   myPromise.then(function(mod) {
-      console.log('success');
-      speak('success. please navigate to the next lesson using the shortcut alt l.');
-   },
-      function(err) {
-       document.getElementById("output").innerText = err.toString();
-       speak("error" + err.toString());
-   });
+function runit(output) { 
+  //var prog = document.getElementById("code").value;
+  var prog = editor.getValue();
+  var mypre = document.getElementById("output"); 
+  mypre.innerHTML = ''; 
+  Sk.pre = "output";
+  Sk.configure({output:outf, read:builtinRead}); 
+  (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+  var myPromise = Sk.misceval.asyncToPromise(function() {
+    return Sk.importMainWithBody("<stdin>", false, prog, true);
+  });
+  myPromise.then(function(mod) {
+    document.getElementById("output").style.visibility = "visible";
+    console.log(output);
+    var codeOutput = document.getElementById("output").innerText;
+    if (output == codeOutput) {
+      document.getElementById("success").style.visibility = "visible";
+      speak(document.getElementById("success").innerText);
+    }
+    else
+      speak(codeOutput);
+    console.log('success');
+  },
+  function(err) {
+    document.getElementById("output").innerText = err.toString();
+    speak("error" + err.toString());
+  });
 } 
 
 
