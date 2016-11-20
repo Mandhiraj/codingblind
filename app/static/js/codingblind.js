@@ -160,7 +160,7 @@ function closeNav() {
 }
 
 var lessonFocus = 0;
-var sectionFocus = 1;
+var sectionFocus = 0;
 var inLesson = true;
 var helpText = "Press alt with different arrow keys to access all content. Use up and down to scroll through options and right to select an option. To start coding, press alt and the spacebar."
 
@@ -172,8 +172,8 @@ function incrementHelpFocus(){
   }
   else{
     sectionFocus++;
-    if(sectionFocus > maxLessons[lessonFocus-1])
-      sectionFocus = 1;
+    if(sectionFocus > maxLessons[lessonFocus-1]-1)
+      sectionFocus = 0;
   }
 }
 
@@ -185,8 +185,8 @@ function decrementHelpFocus(){
   }
   else{
     sectionFocus--;
-    if(sectionFocus < 1)
-      sectionFocus = maxLessons[lessonFocus-1];
+    if(sectionFocus < 0)
+      sectionFocus = maxLessons[lessonFocus-1]-1;
   }
 }
 
@@ -199,7 +199,7 @@ function doc_keyUp(e) {
           closeNav();
         else{
           lessonFocus = 0;
-          sectionFocus = 1;
+          sectionFocus = 0;
           inLesson = true;
           openNav();
         }
@@ -225,14 +225,14 @@ function doc_keyUp(e) {
           else if(!inLesson){
             window.location.href = '/turtle?lesson='+lessonFocus+'&section='+sectionFocus;
             inLesson = true;
-            sectionFocus = 1;
+            sectionFocus = 0;
             lessonFocus = 0;
           }
         }
         else if(e.keyCode == 37){//alt_left
           if(!inLesson){
             inLesson = true;
-            sectionFocus = 1;
+            sectionFocus = 0;
           }
         }
         if(inLesson && lessonFocus == 0 && e.keyCode != 39)

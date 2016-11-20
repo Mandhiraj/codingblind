@@ -1,10 +1,15 @@
 
-heading = 'Conditionals';
+section0 = {
+				'subheading' : 'Conditionals',
+				'content' : """Welcome to Lesson 3. In this lesson we will introduce how to use conditional logic. 
+					When writing code, we don't always want every line to be executed. In order to avoid running everything,
+					we put blocks of code under certain conditions. So when those conditions are met, that block of code runs, 
+					otherwise it doesn't. Press alt n to learn more about conditional logic.""",
+				'challenge' : '',
+				'examples' : [],
+				'hints' : []
+}
 
-introduction = """Welcome to Lesson 3. In this lesson we will introduce how to use conditional logic. 
-				When writing code, we don't always want every line to be executed. In order to avoid running everything,
-				we put blocks of code under certain conditions. So when those conditions are met, that block of code runs, 
-				otherwise it doesn't. Press alt n to learn more about conditional logic."""
 section1 = {
 				'subheading' : 'Comparison Operators',
 				'content' : """There are 6 comparison operators that you must get familar with. 
@@ -114,9 +119,10 @@ section6 = {
 			}			
 
 lesson3 = {
-			'heading' : heading,
-			'introduction' : introduction,
+			'heading' : '',
+			'introduction' : '',
 			'sections' : [
+				section0,
 				section1,
 				section2,
 				section3,

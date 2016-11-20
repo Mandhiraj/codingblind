@@ -9,16 +9,16 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <p style="color:#ffffff">Press alt with different arrow keys to access all content. Use up and down to scroll through options and right to select an option. To start coding, press alt and the spacebar.</p>
+  <p style="color:#ffffff">To navigate press alt with the up or down arrow key to scroll between options. Press alt and the right arrow key to select that option. Press alt with the left arrow key to move back to the previous options. You can also press alt and h to exit the help menu.</p>
   <ul>
   {% for lesson in maxLessons %}
   {% set outer_loop = loop %}
     <li class="active">
-      <a href="/turtle?lesson={{loop.index}}&section=1">Lesson {{loop.index}}</a>
+      <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
       <ul>
         {% for i in range(lesson) %}
           <li class="active">
-            <a href="/turtle?lesson={{outer_loop.index}}&section={{i+1}}">Section {{i+1}}</a>
+            <a href="/turtle?lesson={{outer_loop.index}}&section={{i}}">Section {{i}}</a>
           </li>
         {% endfor %}
       </ul>
@@ -46,7 +46,7 @@
         </li>
           {% for lesson in maxLessons %}
             <li class="active">
-              <a href="/turtle?lesson={{loop.index}}&section=1">Lesson {{loop.index}}</a>
+              <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
             </li>
           {% endfor %}
         <li class="active">

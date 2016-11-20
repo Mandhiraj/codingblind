@@ -20,5 +20,5 @@ def turtle():
 	for lesson in lessons:
 		maxLessons.append(len(lesson["sections"]))
 	
-	return render_template('turtle.html', content=lessons[int(lessonNum)-1]["sections"][int(sectionNum)-1],
+	return render_template('turtle.html', content=lessons[int(lessonNum)-1]["sections"][int(sectionNum)],
 		lessonNum = int(lessonNum), sectionNum = int(sectionNum), maxLessons = maxLessons)

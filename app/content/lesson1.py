@@ -1,8 +1,12 @@
-heading = 'Introduction to Python with Math and Variables';
-
-introduction = """Welcome to Lesson 1. In this lesson we will be introducing you to the website coding environment and 
+section0 = {
+				'subheading' : 'Introduction to Python with Math and Variables',
+				'content' : """Welcome to Lesson 1. In this lesson we will be introducing you to the website coding environment and 
 				learning how to print output, do simple math operations and use variables! To get started with the first section 
-				of this lesson using the key combination alt and the right arrow key."""
+				of this lesson using the key combination alt and the right arrow key.""",
+				'challenge' : "",
+				'examples' : [],
+				'hints' : []
+}
 
 section1 = {
 				'subheading' : 'Introduction to Python and Printing',
@@ -97,9 +101,10 @@ section5 = {
 
 
 lesson1 = {
-			'heading' : heading,
-			'introduction' : introduction,
+			'heading' : "",
+			'introduction' : "",
 			'sections' : [
+				section0,
 				section1, 
 				section2, 
 				section3,

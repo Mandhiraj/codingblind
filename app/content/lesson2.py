@@ -1,7 +1,11 @@
 
-heading = 'Strings in Python';
-
-introduction = 'Welcome to Lesson 2. In lesson 1 we covered the basics of variables and numbers in python. If those concepts do not sound familiar, please review lesson 1 by pressing the key combination alt 1. In this lesson we will cover strings. Strings are simply sequences of characters. The characters contained within a string can be basically anything you would type into a standard word processor. Letters, numbers and symbols are a few examples of possible characters. '
+section0 = {
+				'subheading' : 'Strings in Python',
+				'content' : 'Welcome to Lesson 2. In lesson 1 we covered the basics of variables and numbers in python. If those concepts do not sound familiar, please review lesson 1 by pressing the key combination alt 1. In this lesson we will cover strings. Strings are simply sequences of characters. The characters contained within a string can be basically anything you would type into a standard word processor. Letters, numbers and symbols are a few examples of possible characters. ',
+				'challenge' : '',
+				'examples' : [],
+				'hints' : []
+}
 
 section1 = {
 				'subheading' : 'Creating Strings',
@@ -46,9 +50,10 @@ section3 = {
 
 
 lesson2 = {
-			'heading' : heading,
-			'introduction' : introduction,
+			'heading' : '',
+			'introduction' : '',
 			'sections' : [
+				section0,
 				section1, 
 				section2, 
 				section3
