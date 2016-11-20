@@ -33,48 +33,35 @@ function substitutePunctuation(text){
   return text;
 }
 
-function setupSpeech(text) {
+function speakHelper(msgs, index) {
   msg = new SpeechSynthesisUtterance();
-  msg.text = text;
+  msg.text = msgs[index];
   msg.lang = 'en-US';
   msg.voiceURI = 'native';
   msg.volume = 1; // 0 to 1
   msg.rate = .8; // 0.1 to 10
   msg.pitch = 1.1; //0 to 2
   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'english'; })[0];
-  return msg;
+  msg.onend = function(event) {
+    if(msgs.length - 1 == index) return;
+    else speakHelper(msgs, index + 1);
+  };  
+  speechSynthesis.speak(msg);
+  speechSynthesis.resume();
 }
 
 function speak_punc(text) {
   text = substitutePunctuation(text);
-
-  speechSynthesis.pause();
-  speechSynthesis.cancel();
-
-  msg = setupSpeech(text);
-
-  speechSynthesis.speak(msg);
-  speechSynthesis.resume();
-
-//   speechSynthesis.getVoices().forEach(function(voice) {
-//   console.log(voice.name, voice.default ? '(default)' :'');
-// });
+  speak(text);
 }
 
 function speak(text) {
   speechSynthesis.pause();
   speechSynthesis.cancel();
 
-  msg = setupSpeech(text);
-
-  speechSynthesis.speak(msg);
-  speechSynthesis.resume();
-
-//   speechSynthesis.getVoices().forEach(function(voice) {
-//   console.log(voice.name, voice.default ? '(default)' :'');
-// });
+  msgs = text.split('.');
+  speakHelper(msgs,0);
 }
-
 
 
 function runCode() {
