@@ -90,7 +90,7 @@ function read_heading() {
   console.log('hello ready state change')
   var lessonNumber = document.getElementById("LessonNumber").textContent;
   var sectionNumber = document.getElementById("SectionNumber").textContent;
-  var heading = $("#Heading").text();
+  var heading = $("#subheading").text();
   var message = "Lesson " + lessonNumber + " Section " + sectionNumber + heading; 
   speak(message);
 }
