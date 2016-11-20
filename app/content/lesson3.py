@@ -103,12 +103,6 @@ section6 = {
 							   So our expression will be true when at least 1 of the conditions is true, unlike
 							   when using and where both of the conditions have to be true. Check out the code
 							   in the editor to get a better understanding.""",
-
-							# rain = False
-							# wind = False
-							# if rain == True or wind == True:
-							#     print "It may be storming."
-
 				'challenge' : """Change the variables rain and wind so that "It may be storming" gets printed.""",
 				'code' :	"""rain = False\nwind = False\nif rain == True or wind == True:\n\tprint \"It may be storming.\"""",
 				'examples' : [{ 

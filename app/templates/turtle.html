@@ -41,7 +41,9 @@
 <a id="NextLesson" href="/turtle?lesson={{lessonNum+1}}&section=1" style="visibility: hidden">Next Lesson</a>
 {% else %}
 <a id="NextLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum+1}}" style="visibility: hidden">Next Lesson</a>
-{% endif %} 
+{% endif %}
+<div style="display: none;" id="LessonNumber">{{ lessonNum }}</div>
+<div style="display: none;" id="SectionNumber">{{ sectionNum }}</div>
 </div> <!--col-md-6-->
 </body> 
 </html>
