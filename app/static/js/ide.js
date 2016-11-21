@@ -1,3 +1,42 @@
+function checkCodeStructure(code, output) {
+  lessonNum = document.getElementById("LessonNumber").textContent;
+  sectionNum = document.getElementById("SectionNumber").textContent;
+
+  if (sectionNum == 0)
+    return true;
+  if (lessonNum == 1) {
+    if (sectionNum == 1)
+      return !isNaN(parseFloat(output)) && isFinite(output);
+    if (sectionNum == 2)
+      return code.includes("10") && code.includes("20");
+    if (sectionNum == 3)
+      return !code.includes("8") && code.includes("(") && code.includes(")");
+    if (sectionNum == 4)
+      return code.includes("=") && code.includes("10") && code.includes("20");
+    if (sectionNum == 5)
+      return !code.includes("8") && code.includes("=");
+  }
+  if (lessonNum == 2) {
+    if (sectionNum == 1)
+      return output.match(/[a-z]/i)
+    if (sectionNum == 2)
+      return code.includes("=") && code.includes("+");
+  }
+  if (lessonNum == 3) {
+    if (sectionNum == 1)
+      return true;
+ 
+  }
+
+
+
+  
+  
+
+
+
+  return false;
+}
 
 // output functions are configurable.  This one just appends some text
 // to a pre element.
@@ -27,10 +66,9 @@ function runit(output) {
     return Sk.importMainWithBody("<stdin>", false, prog, true);
   });
   myPromise.then(function(mod) {
-    document.getElementById("output").style.visibility = "visible";
-    console.log(output);
     var codeOutput = document.getElementById("output").innerText;
-    if (output == codeOutput) {
+    
+    if ((output == codeOutput || output == "js") && checkCodeStructure(prog, codeOutput)) {
       document.getElementById("success").style.visibility = "visible";
       speak(document.getElementById("success").innerText);
     }
@@ -40,6 +78,12 @@ function runit(output) {
   },
   function(err) {
     document.getElementById("output").innerText = err.toString();
-    speak("error" + err.toString());
+    
+    if (prog == "")
+      speak("You haven't coded anything yet!");
+    else
+      speak("error" + err.toString());
   });
+
+  document.getElementById("output").style.visibility = "visible";
 } 

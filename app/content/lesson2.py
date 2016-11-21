@@ -4,7 +4,8 @@ section0 = {
 				'content' : 'Welcome to Lesson 2. In lesson 1 we covered the basics of variables and numbers in python. In this lesson we will cover strings. Strings are simply sequences of characters. The characters contained within a string can be basically anything you would type into a standard word processor. Letters, numbers, and symbols are examples of possible characters.',
 				'challenge' : '',
 				'examples' : [],
-				'hints' : []
+				'hints' : [],
+				'output' : ''
 }
 
 section1 = {
@@ -17,7 +18,8 @@ section1 = {
 							}],
 				'hints' : [
 							'Remember, a string in python is a sequence of characters that begin and end with quotation marks.'
-						  ]
+						  ],
+				'output' : 'js'
 			}
 section2 = {
 				'subheading' : 'Concatenating Strings',

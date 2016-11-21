@@ -17,7 +17,7 @@ function read_heading() {
   speak(message);
 }
 
-var navFocus = PAGECONTENT.NEXTLESSON;
+var navFocus = PAGECONTENT.HEADING;
 var helpFocus = 0;
 
 function incrementNavFocus(navFocus) {

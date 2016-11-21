@@ -7,7 +7,8 @@ section0 = {
 					otherwise it doesn't. Press alt n to learn more about conditional logic.""",
 				'challenge' : '',
 				'examples' : [],
-				'hints' : []
+				'hints' : [],
+				'output' : ''
 }
 
 section1 = {
@@ -15,16 +16,15 @@ section1 = {
 				'content' : """There are 6 comparison operators that you must get familar with. 
 								They are: <, <=, >, >=, ==, !=. Expressions using these operators evaluate to True or False.
 								For example the expression 5 < 10 evaluates to True, however, the expression 5 > 10 evaluates to False.""",
-				'challenge' : """Practice using these operators. Assign the result of an expression
-								to a variable called answer and then print answer. Do this first with an expression than 
-								evaluates to True and then with an expression that evaluates to False.""",
+				'challenge' : """Practice using these operators. Print the result of an expression that results to true.""",
 				'examples' : [{ 
 								'input' : 'answer = 5 < 10\nprint answer',
 								'output' : 'True'		
 							}],
 				'hints' : [
 							''
-						  ]
+						  ],
+				'output' : 'True\n'
 			}
 
 section2 = {

@@ -5,7 +5,8 @@ section0 = {
 				of this lesson, press alt and the right arrow key.""",
 				'challenge' : "",
 				'examples' : [],
-				'hints' : []
+				'hints' : [],
+				'output' : ''
 }
 
 section1 = {
@@ -30,7 +31,7 @@ section1 = {
 
 section2 = {
 				'subheading' : 'Math in Python',
-				'content' : """Let's start  with a simple math problem. Programming languages are excellent	
+				'content' : """Let's start with a simple math problem. Programming languages are excellent	
 					for doing math because of their incredible speed. You can use the plus, dash, asterisk, or slash keys to do the 
 					four basic math operations: addition, subtraction, multiplication, and division.
 					Let's say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
@@ -42,7 +43,7 @@ section2 = {
 				'hints' : [
 							""""""
 						  ],
-				'output' : '200'
+				'output' : '200\n'
 			}
 
 section3 = {
@@ -61,7 +62,7 @@ section3 = {
 							"""Remember that for the subtraction to be calculated before the multiplication you need to put an open parenthesis before 
 							5 minus 3 and put a close parenthesis after."""
 						  ],
-				'output' : '8'
+				'output' : '8\n'
 			}
 
 section4 = {
@@ -81,7 +82,7 @@ section4 = {
 				'hints' : [
 							''
 						  ],
-				'output' : '200'
+				'output' : '200\n'
 			}
 
 section5 = {
