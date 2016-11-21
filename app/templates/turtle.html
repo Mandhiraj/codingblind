@@ -36,7 +36,7 @@
 <button id="RunCode" type="button" onclick="runit('{{content['output']|replace("\n","\\n")}}')">Run</button> 
 </form> 
 <pre id="output" style="visibility: hidden"></pre> 
-<p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Use alt with the arrow keys to advance to the next lesson.</p>
+<p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Keep going!</p>
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
 {% if lessonNum == maxLessons|length and maxLessons[lessonNum-1]-1 == sectionNum %}

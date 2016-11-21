@@ -24,8 +24,17 @@ function checkCodeStructure(code, output) {
   }
   if (lessonNum == 3) {
     if (sectionNum == 1)
-      return true;
- 
+      return code.includes(">") || code.includes("<") || code.includes("==") || code.includes("!=");
+    if (sectionNum == 2)
+      return code.includes("= True") || code.includes("=True");
+    if (sectionNum == 3)
+      return code.includes("cow");
+    if (sectionNum == 4)
+      return code.includes("else") && code.toLowerCase().includes("not a valid animal");
+    if (sectionNum == 5)
+      return code.includes("rain = True") && code.includes("wind = True");
+    if (sectionNum == 6)
+      return code.includes("rain = True") || code.includes("wind = True");
   }
 
 
