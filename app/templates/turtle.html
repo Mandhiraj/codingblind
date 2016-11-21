@@ -39,7 +39,7 @@
 <form> 
 <textarea id="code" cols="40" rows="10">{{content["code"]}}
 </textarea><br /> 
-<button id="RunCode" class="btn btn-primary" style="float: right" type="button" onclick="runit('{{content['output']|replace("\n","\\n")}}')">Run Code</button> 
+<button id="RunCode" class="btn btn-primary" style="float: right" type="button" onclick="runit('{{content['output']|replace("\n","\\n")}}')">Run Code</button> <br><br>
 </form> 
 <pre id="output" style="visibility: hidden"></pre> 
 <p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Keep going!</p>
