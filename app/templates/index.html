@@ -24,11 +24,15 @@ function doc_keyUp(e) {
 }
 document.addEventListener('keyup', doc_keyUp, false);
 </script>
-<p id="intro" ng-init="$ctrl.readIntro()">This website will walk you through a series of programming tutorials
-using Python.
-You will not need your own screen reader software when using this website.
-Press ALT + H to access the help menu at any time.
-Press ALT + 1 to begin Lesson 1! </p>
+<div id="intro">
+<p ng-init="$ctrl.readIntro()">You will not need your own screen reader for this website. Our goal is to teach you the basics of Python using a series of interactive lessons. Before we begin, there are a few things you should try to remember:</p>
+<ol>
+	<li>Use alt with the up and down arrow keys to hear available options.</li>
+	<li>Use alt with the right arrow key to select an option.</li>
+	<li>Use alt h to open the menu and jump to other lessons.</li>
+</ol>
+<p>Let's get started! Press alt and the right arrow key to head to lesson 1.</p>
+</div>
 </div>
 <div class="col-md-2"></div>
 
