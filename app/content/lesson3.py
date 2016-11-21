@@ -41,7 +41,7 @@ section2 = {
 				'examples' : [{ 
 							}],
 				'hints' : [
-							'You only need to change the variable.'
+							'You only need to change the variable rain.'
 						  ]
 			}
 
@@ -51,8 +51,8 @@ section3 = {
 							else-if. They are formatted exactly like if statements, with the exception that the key word if
 							is replaced with elif. You can have have an if statement followed by multiple elif statements. 
 							Take a look at the code in the editor. You'll note that depending on what the value of the variable 
-							animal is set to at the top of the code, a different word gets printed. Read through the code and 
-							see if you can change animal so that you print each of three the words once.""",
+							animal is set to at the top of the code, a different word gets printed. Listen through the code and 
+							try to change animal so that you print each of three the words once.""",
 				'challenge' : """Add an elif statement to the code in the editor such that when the value of animal is set to
 								cow, moo gets printed.""",
 				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
