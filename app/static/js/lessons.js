@@ -82,6 +82,10 @@ function doc_keyUp(e) {
         navFocus = incrementNavFocus(navFocus);
         speak(navFocus.name);
       }
+      else if(e.keyCode == 71){
+        console.log('alt g');
+        editor.focus();
+      }
     }
   }
 }
