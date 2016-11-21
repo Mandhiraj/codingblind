@@ -4,7 +4,7 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
     document.getElementById("main").style.marginLeft = "300px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    speak("You have opened the help menu! " + helpText);
+    speak("You have opened the menu," + helpText);
     isNavOpen = true;
 }
 
@@ -13,14 +13,14 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
     document.body.style.backgroundColor = "white";
-    speak("You have closed the help menu!");
+    speak("You have closed the menu");
     isNavOpen = false;
 }
 
 var lessonFocus = 0;
 var sectionFocus = 0;
 var inLesson = true;
-var helpText = "Press alt with different arrow keys to access all content. Use up and down to scroll through options and right to select an option. To start coding, press alt and the spacebar."
+var helpText = "Use alt and the arrow keys to scroll through and select an option, to start coding, press alt and the spacebar."
 
 function incrementHelpFocus(){
   if(inLesson){

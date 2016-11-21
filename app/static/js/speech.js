@@ -19,7 +19,8 @@ var punctuation = {
   ']':'close square bracket',
   ',':'comma',
   '.':'dot',
-  '\n':'newline'
+  '\n':'newline',
+  '_':'underscore'
 }
 
 function substitutePunctuation(text){
