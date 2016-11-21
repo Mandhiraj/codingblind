@@ -16,14 +16,14 @@ section1 = {
 					To output something to the screen in Python you use the word 'print' followed by what you would like to output.""",
 				'challenge' : """For this problem try printing out your favorite number. Now press alt and the up or down arrow key to navigate to hear the hint for the problem. 
 					For every section, if there is a hint you can navigate this way to hear it but we recommend that you try to complete the challenge on your own first.
-					Use the key combination alt and space to start coding.""",
+					Use the key combination alt and g to go to the editor and start coding.""",
 				'examples' : [{
 								'input' : 'print 27',
 								'output' : '27'
 							}],
 				'hints' : [
 							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
-								automatically read to you. Go to the editor using the alt space key combination and try out the challenge. Then use the arrow keys to hear the code you write. 
+								automatically read to you. Go to the editor using the alt and g key combination and try out the challenge. Then use the arrow keys to hear the code you write. 
 								Once you are done typing, choose the run option by using alt and the arrow keys to run your code."""
 						  ],
 				'output' : 'js'
