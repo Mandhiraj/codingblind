@@ -2,7 +2,7 @@ section0 = {
 				'subheading' : 'Introduction to Python with Math and Variables',
 				'content' : """Welcome to Lesson 1. In this lesson we will be introducing you to the website coding environment and 
 				learning how to print output, do simple math operations and use variables! To get started with the first section 
-				of this lesson using the key combination alt and the right arrow key.""",
+				of this lesson, press alt and the right arrow key.""",
 				'challenge' : "",
 				'examples' : [],
 				'hints' : []
@@ -10,7 +10,7 @@ section0 = {
 
 section1 = {
 				'subheading' : 'Introduction to Printing',
-				'content' : """Welcome to the first section. As you can notice, when you move to a new section the problem heading will be automatically read to you! 
+				'content' : """Welcome to the first section. As you can notice, when you move to a new section the problem heading will be automatically read to you. 
 					In this section we will learn how to output to the screen. 
 					To output something to the screen in Python you use the word 'print' followed by what you would like to output.""",
 				'challenge' : """For this problem try printing out your favorite number. Now press alt and the up or down arrow key to navigate to hear the hint for the problem. 
