@@ -15,7 +15,7 @@ window.onload = codeAddress;
 
 function doc_keyUp(e) {
   e.preventDefault();
-  if (e.altKey) {
+  if (e.altKey && !isNavOpen) {
     if (e.keyCode == 38 || e.keyCode == 40)
       speak("Next lesson");
     else if (e.keyCode == 39)
