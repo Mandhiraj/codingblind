@@ -39,7 +39,7 @@
 <p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Use alt with the arrow keys to advance to the next lesson.</p>
 <!-- If you want turtle graphics include a canvas -->
 <div id="mycanvas"></div>
-{% if lessonNum == maxLessons|length and maxLessons[lessonNum-1] == sectionNum %}
+{% if lessonNum == maxLessons|length and maxLessons[lessonNum-1]-1 == sectionNum %}
 <!--no next link if final lesson (for now)-->
 <a id="PrevLesson" href="/turtle?lesson={{lessonNum}}&section={{sectionNum-1}}" style="visibility: hidden">Previous Lesson</a>
 {% elif lessonNum == 1 and sectionNum == 0 %}
