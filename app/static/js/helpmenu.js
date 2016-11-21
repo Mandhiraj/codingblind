@@ -62,10 +62,6 @@ function doc_keyUp(e) {
           openNav();
         }
       }
-      else if (e.keyCode == 49) // Alt+1
-        window.location.href = '/turtle';
-      else if (e.keyCode == 82) // Alt+R
-        runCode();
       else if (isNavOpen){
         if (e.keyCode == 38) {//alt+down
           decrementHelpFocus();
