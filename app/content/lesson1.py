@@ -9,28 +9,28 @@ section0 = {
 }
 
 section1 = {
-				'subheading' : 'Introduction to Python and Printing',
+				'subheading' : 'Introduction to Printing',
 				'content' : """Welcome to the first section. As you can notice, when you move to a new section the problem heading will be automatically read to you! 
 					In this section we will learn how to output to the screen. 
 					To output something to the screen in Python you use the word 'print' followed by what you would like to output.""",
-				'challenge' : """For this problem try printing out your favorite number! Now press alt and the arrow keys to navigate to hear the hint for the problem. 
-					For every section, if there is a hint you can navigate this way to hear it but we recommend that you try to complete the challenge on your own first! 
-					Use the key combination alt and space to start coding!""",
+				'challenge' : """For this problem try printing out your favorite number. Now press alt and the up or down arrow key to navigate to hear the hint for the problem. 
+					For every section, if there is a hint you can navigate this way to hear it but we recommend that you try to complete the challenge on your own first.
+					Use the key combination alt and space to start coding.""",
 				'examples' : [{
 								'input' : 'print 27',
 								'output' : '27'
 							}],
 				'hints' : [
 							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
-								automatically be read to you. Go to code using the alt space key combination and try out the challenge then use the arrow keys to hear the code you write! 
-								Once you are done using alt and the arrow key to choose the run option to run your code!"""
+								automatically read to you. Go to the editor using the alt space key combination and try out the challenge. Then use the arrow keys to hear the code you write. 
+								Once you are done typing, choose the run option by using alt and the arrow keys to run your code."""
 						  ],
 				'output' : 'js'
 			}
 
 section2 = {
 				'subheading' : 'Math in Python',
-				'content' : """Let's start  with a simple math problem! Programming languages are excellent	
+				'content' : """Let's start  with a simple math problem. Programming languages are excellent	
 					for doing math because of their incredible speed. You can use the plus, dash, asterisk, or slash keys to do the 
 					four basic math operations: addition, subtraction, multiplication, and division.
 					Let's say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
@@ -47,12 +47,12 @@ section2 = {
 
 section3 = {
 				'subheading' : 'Math and Order of Operations',
-				'content' : """Programming languages like Python follow the order of operations that you have learned in your math classes! 
+				'content' : """Programming languages like Python follow the order of operations that you have learned in your math classes. 
 					So following the order of operations, if you had the math problem one plus one times two we would first multiply one and two then add 
 					one to that value and get an answer of 3. If you wanted one plus one to be calculated first then you would put parentheses around that 
-					part of your equation. Remember you can press alt e to hear an example of this.""",
+					part of your expression.""",
 				'challenge' : """Try printing the solution to the math problem 5 minus 3 times 4 if we wanted the subtraction to be calculated 
-					before the multiplication.""",
+					before the multiplication. Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
 				'examples' : [{
 								'input' : 'print ( 1 + 1 ) * 2',
 								'output' : '4'
@@ -69,11 +69,11 @@ section4 = {
 				'content' : """Let's say we were doing a longer math problem and 10 * 20 was one of our intermediate steps. 
 					We could assign the result of 10 * 20 to a variable and then print to the screen. Think of a variable 
 					as a holding place for a piece of information. If needed we can change the piece of information 
-					that the variable holds as we go. We can call this variable whatever we want, in this problem try naming 
-					your variable something that describes the information it holds, like result or answer. To set your variable's 
+					that the variable holds as we go. We can call this variable whatever we want. In this problem, try naming 
+					your variable something that describes the information it holds, such as result or answer. To set your variable's 
 					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
-					Use alt and the arrow keys to navigate to the example option to see how to use a variable.""",
+					Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
 				'examples' : [{
 								'input' : 'result = 1 + 2\nprint result',
 								'output' : '3'
@@ -87,13 +87,13 @@ section4 = {
 section5 = {
 				'subheading' : 'Math with Multiple Variables',
 				'content' : """In the previous two sections we have learned about how to do basic math operations in Python 
-					and how to store values to variables. These variables are useful when doing larger math operations because 
+					and how to store values in variables. These variables are useful when doing larger math operations because 
 					you can perform any math operation on them (like adding or dividing). To do this you treat the variable the same
 					as a number in an equation. Remember back to section 3 where we calculated ( 5 minus 3 ) times 4. Instead of putting 
 					parentheses around 5 minus 3 we could also first set a variable equal to this value then multiply the variable by 4 to 
 					get the same result.""",
-				'challenge' : """For this challenge setting a variable equal to 5 minus 3 then print out your variable multiplied by 4. 
-					If hearing an example of this would be helpful press navigate there with alt and the arrow keys or you can attempt coding this on your own first!""",
+				'challenge' : """For this challenge, set a variable equal to 5 minus 3 then print out your variable multiplied by 4. 
+								You could listen to the example but try coding this on your own first.""",
 				'examples' : [{
 								'input' : 'result = 1 + 1\nprint result * 2',
 								'output' : '4'
