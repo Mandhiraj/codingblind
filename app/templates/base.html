@@ -10,22 +10,18 @@
 
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <ul>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
   {% for lesson in maxLessons %}
   {% set outer_loop = loop %}
-    <li class="active">
-      <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
-      <ul>
+    <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
+    <ul style="list-style:none">
         {% for i in range(lesson) %}
           <li class="active">
-            <a href="/turtle?lesson={{outer_loop.index}}&section={{i}}">Section {{i}}</a>
+            <a href="/turtle?lesson={{outer_loop.index}}&section={{i}}">§{{outer_loop.index}}.{{i}} </a>
           </li>
         {% endfor %}
       </ul>
-    </li>
   {% endfor %}
-  </ul>
 </div>
 
 <div id="main">

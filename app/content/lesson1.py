@@ -3,9 +3,9 @@ section0 = {
 				'content' : """Welcome to Lesson 1. In this lesson we will be introducing you to the website coding environment and 
 				learning how to print output, do simple math operations and use variables! To get started with the first section 
 				of this lesson, press alt and the right arrow key.""",
-				'challenge' : "",
+				'challenge' : '',
 				'examples' : [],
-				'hints' : [],
+				'hints' : [''],
 				'output' : ''
 }
 

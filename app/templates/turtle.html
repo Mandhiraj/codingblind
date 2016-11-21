@@ -25,15 +25,21 @@
 <div class="col-md-6">
 <h1 id="Heading">§{{lessonNum}}.{{sectionNum}} <span id="subheading">{{content["subheading"]}}</span></h1>
 <p id="Content">{{content["content"]}}</p>
+{% if content["challenge"] != '' %}
+<h3 style="font-style:italic">Challenge</h3>
+{% endif %}
 <p id="Challenge">{{content["challenge"]}}</p>
 <p id="Example">{{content["example"]}}</p>
+{% if content["hints"][0] != '' %}
+<h3 style="font-style:italic">Hints</h3>
+{% endif %}
 <p id="Hints">{{content["hints"][0]}}</p>
 </div>
 <div class="col-md-6">
 <form> 
 <textarea id="code" cols="40" rows="10">{{content["code"]}}
 </textarea><br /> 
-<button id="RunCode" type="button" onclick="runit('{{content['output']|replace("\n","\\n")}}')">Run</button> 
+<button id="RunCode" class="btn btn-primary" style="float: right" type="button" onclick="runit('{{content['output']|replace("\n","\\n")}}')">Run Code</button> 
 </form> 
 <pre id="output" style="visibility: hidden"></pre> 
 <p id="success" style="visibility: hidden">Congratulations! You have completed this lesson. Keep going!</p>

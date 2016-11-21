@@ -7,7 +7,7 @@ section0 = {
 					otherwise it doesn't. Press alt n to learn more about conditional logic.""",
 				'challenge' : '',
 				'examples' : [],
-				'hints' : [],
+				'hints' : [''],
 				'output' : ''
 }
 

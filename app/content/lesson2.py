@@ -2,9 +2,9 @@
 section0 = {
 				'subheading' : 'Strings in Python',
 				'content' : 'Welcome to Lesson 2. In lesson 1 we covered the basics of variables and numbers in python. In this lesson we will cover strings. Strings are simply sequences of characters. The characters contained within a string can be basically anything you would type into a standard word processor. Letters, numbers, and symbols are examples of possible characters.',
-				'challenge' : '',
+				'challenge' : "",
 				'examples' : [],
-				'hints' : [],
+				'hints' : [''],
 				'output' : ''
 }
 
