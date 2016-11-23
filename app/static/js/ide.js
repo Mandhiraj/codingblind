@@ -81,8 +81,11 @@ function runit(output) {
       document.getElementById("success").style.visibility = "visible";
       speak(document.getElementById("success").innerText);
     }
-    else
-      speak('output:' + codeOutput);
+    else {
+      speak('output:' + codeOutput + " " + document.getElementById("failure").innerText);
+      document.getElementById("failure").style.visibility = "visible";
+    }
+
     console.log('success');
   },
   function(err) {
