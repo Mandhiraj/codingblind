@@ -20,7 +20,7 @@ function closeNav() {
 var lessonFocus = 0;
 var sectionFocus = 0;
 var inLesson = true;
-var helpText = "Use alt and the arrow keys to scroll through and select an option, to start coding, caroline."
+var helpText = "Use alt and the arrow keys to scroll through and select an option, to start coding."
 
 function incrementHelpFocus(){
   if(inLesson){
