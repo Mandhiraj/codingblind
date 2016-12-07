@@ -3,7 +3,7 @@ function checkCodeStructure(code, output) {
   sectionNum = document.getElementById("SectionNumber").textContent;
 
   if (sectionNum == 0)
-    return true;
+    return false;
   if (lessonNum == 1) {
     if (sectionNum == 1)
       return !isNaN(parseFloat(output)) && isFinite(output);
