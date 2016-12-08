@@ -1,4 +1,10 @@
 var msg = new SpeechSynthesisUtterance();
+msg.lang = 'en-US';
+msg.voiceURI = 'native';
+msg.volume = 1;
+msg.rate = 0.8;
+msg.pitch = 1.1;
+
 
 var punctuation = {
   '\t':'tab',
@@ -40,7 +46,14 @@ function setupSpeech(text) {
   msg.volume = 1; // 0 to 1
   msg.rate = .8; // 0.1 to 10
   msg.pitch = 1.1; //0 to 2
-  msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'english'; })[0];
+
+  var voices = speechSynthesis.getVoices();
+  for (int i = 0; i < voices.length; ++i) {
+    if (voices[i].name === "native")
+      msg.voice = voices[i];
+  }
+
+  //msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Google US English'; })[0];
   return msg;
 }
 
@@ -116,19 +129,20 @@ function speak(text) {
   speechSynthesis.pause();
   speechSynthesis.cancel();
 
-  utterance = setupSpeech(text);
+  //utterance = setupSpeech(text);
   //pass it into the chunking function to have it played out.
   //you can set the max number of characters by changing the chunkLength property below.
   //a callback function can also be added that will fire once the entire text has been spoken.
-  speechUtteranceChunker(utterance, {
-      chunkLength: 120
-  }, function () {
-      //some code to execute when done
-      console.log('done');
-  });
-
-  // speechSynthesis.speak(msg);
-  // speechSynthesis.resume();
+  // speechUtteranceChunker(utterance, {
+  //     chunkLength: 120
+  // }, function () {
+  //     //some code to execute when done
+  //     console.log('done');
+  // });
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  speechSynthesis.speak(msg);
+  speechSynthesis.resume();
 
 //   speechSynthesis.getVoices().forEach(function(voice) {
 //   console.log(voice.name, voice.default ? '(default)' :'');
