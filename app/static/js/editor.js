@@ -38,4 +38,42 @@ window.onload = function () {
     editor.on("focus", editorFocused); // read number of lines and current line.
     editor.on("blur", editorBlurred); // read number of lines and current line.
 
-  };
+}
+
+function substitutePunctuation(text){
+  for (var i = 0; i < text.length; i++) {
+    if(text[i] in punctuation){
+      text = text.replace(text[i],' ' + punctuation[text[i]] +' ');
+    }
+  }  
+  return text;
+}
+
+function speak_punc(text) {
+  text = substitutePunctuation(text);
+
+  speak(text);
+}
+
+var punctuation = {
+  '\t':'tab',
+  ':':'colon',
+  '\'':'quote',
+  '\"':'double quote',
+  '=':'equal',
+  '+':'plus',
+  '-':'minus',
+  '<':'less than',
+  '>':'greater than',
+  '!':'exclamation mark',
+  '(':'open parantheses',
+  ')':'close parantheses',
+  '{':'open curly brace',
+  '}':'close curly brace',
+  '[':'open square bracket',
+  ']':'close square bracket',
+  ',':'comma',
+  '.':'dot',
+  '\n':'newline',
+  '_':'underscore'
+}

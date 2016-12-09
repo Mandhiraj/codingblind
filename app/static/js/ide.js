@@ -79,11 +79,13 @@ function runit(output) {
     
     if ((output == codeOutput || output == "js") && checkCodeStructure(prog, codeOutput)) {
       document.getElementById("success").style.visibility = "visible";
+      document.getElementById("failure").style.visibility = "hidden";
       speak(document.getElementById("success").innerText);
     }
     else {
       speak('output:' + codeOutput + " " + document.getElementById("failure").innerText);
       document.getElementById("failure").style.visibility = "visible";
+      document.getElementById("success").style.visibility = "hidden";
     }
 
     console.log('success');
@@ -91,10 +93,16 @@ function runit(output) {
   function(err) {
     document.getElementById("output").innerText = err.toString();
     
-    if (prog == "")
+    if (prog == ""){
       speak("You haven't coded anything yet!");
-    else
+      document.getElementById("success").style.visibility = "hidden";
+      document.getElementById("failure").style.visibility = "hidden";
+    }
+    else{
       speak("error" + err.toString());
+      document.getElementById("success").style.visibility = "hidden";
+      document.getElementById("failure").style.visibility = "hidden";
+    }
   });
 
   document.getElementById("output").style.visibility = "visible";
