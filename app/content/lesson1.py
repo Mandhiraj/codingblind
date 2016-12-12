@@ -28,10 +28,10 @@ section1 = {
 
 section2 = {
 				'subheading' : 'Math in Python',
-				'content' : """Let's start with a simple math problem. Programming languages are excellent	
+				'content' : """We will start with a simple math problem. Programming languages are excellent	
 					for doing math because of their incredible speed. You can use the plus, dash, asterisk, or slash keys to do the 
 					four basic math operations: addition, subtraction, multiplication, and division.
-					Let's say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
+					Say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
 				'challenge' : """For this challenge try printing out 10 times 20""",
 				'examples' : 'print 1 + 2',
 				'hints' : [
@@ -58,12 +58,12 @@ section3 = {
 
 section4 = {
 				'subheading' : 'Variables in Python',
-				'content' : """Let's say we were doing a longer math problem and 10 * 20 was one of our intermediate steps. 
+				'content' : """Say we were doing a longer math problem and 10 * 20 was one of our intermediate steps. 
 					We could assign the result of 10 * 20 to a variable and then print to the screen. Think of a variable 
 					as a holding place for a piece of information. If needed we can change the piece of information 
 					that the variable holds as we go. We can call this variable whatever we want. In this problem, try naming 
-					your variable something that describes the information it holds, such as result or answer. To set your variable's 
-					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
+					your variable something that describes the information it holds, such as result or answer. To set your variables 
+					value you type the variables name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
 					Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
 				'examples' : 'result = 1 + 2',
