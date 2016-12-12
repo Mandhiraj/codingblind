@@ -21,7 +21,7 @@ section1 = {
 	'code' : '',
 	'examples' : 'for number in range(1, 5):',
 	'hints' : ['Remember that the print statement must be tabbed further than the for loop. Check the example for proper syntax.'],
-	'output' : 'hello\nhello\nhello\nhello\nhello\nhello\n'
+	'output' : 'hello\nhello\nhello\nhello\nhello\n'
 }
 
 section2 = {

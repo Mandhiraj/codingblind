@@ -37,8 +37,14 @@ function checkCodeStructure(code, output) {
       return code.includes("rain = True") || code.includes("wind = True");
   }
 
-
-
+  if (lessonNum == 4) {
+    if (sectionNum == 1)
+      return code.includes("for") && code.includes("range");
+    if (sectionNum == 2)
+      return code.includes("for") && code.includes("animals") && code.includes("in");
+    if (sectionNum == 3)
+      return code.includes("for") && code.includes("if") && code.includes("7") && code.includes("range");
+  }
   
   
 
@@ -70,7 +76,7 @@ function runit(output) {
   mypre.innerHTML = ''; 
   Sk.pre = "output";
   Sk.configure({output:outf, read:builtinRead}); 
-  (Sk.classroomGraphics || (Sk.classroomGraphics = {})).target = 'mycanvas';
+  (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
   var myPromise = Sk.misceval.asyncToPromise(function() {
     return Sk.importMainWithBody("<stdin>", false, prog, true);
   });
@@ -105,40 +111,5 @@ function runit(output) {
     }
   });
 
-  document.getElementById("output").style.visibility = "visible";
-} 
-
-
-// Here's everything you need to run a python program in skulpt
-// grab the code from your textarea
-// get a reference to your pre element for output
-// configure the output function
-// call Sk.importMainWithBody()
-function runitSandbox(output) { 
-  //var prog = document.getElementById("code").value;
-  var prog = editor.getValue();
-  var mypre = document.getElementById("output"); 
-  mypre.innerHTML = ''; 
-  Sk.pre = "output";
-  Sk.configure({output:outf, read:builtinRead}); 
-  (Sk.classroomGraphics || (Sk.classroomGraphics = {})).target = 'mycanvas';
-  var myPromise = Sk.misceval.asyncToPromise(function() {
-    return Sk.importMainWithBody("<stdin>", false, prog, true);
-  });
-  myPromise.then(function(mod) {
-    var codeOutput = document.getElementById("output").innerText;
-    speak('output:' + codeOutput + " " + document.getElementById("failure").innerText);
-    console.log('success');
-  },
-  function(err) {
-    document.getElementById("output").innerText = err.toString();
-    
-    if (prog == ""){
-      speak("You haven't coded anything yet!");
-    }
-    else{
-      speak("error" + err.toString());
-    }
-  });
   document.getElementById("output").style.visibility = "visible";
 } 
