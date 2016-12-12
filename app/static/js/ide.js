@@ -70,7 +70,7 @@ function runit(output) {
   mypre.innerHTML = ''; 
   Sk.pre = "output";
   Sk.configure({output:outf, read:builtinRead}); 
-  (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+  (Sk.classroomGraphics || (Sk.classroomGraphics = {})).target = 'mycanvas';
   var myPromise = Sk.misceval.asyncToPromise(function() {
     return Sk.importMainWithBody("<stdin>", false, prog, true);
   });
@@ -105,5 +105,40 @@ function runit(output) {
     }
   });
 
+  document.getElementById("output").style.visibility = "visible";
+} 
+
+
+// Here's everything you need to run a python program in skulpt
+// grab the code from your textarea
+// get a reference to your pre element for output
+// configure the output function
+// call Sk.importMainWithBody()
+function runitSandbox(output) { 
+  //var prog = document.getElementById("code").value;
+  var prog = editor.getValue();
+  var mypre = document.getElementById("output"); 
+  mypre.innerHTML = ''; 
+  Sk.pre = "output";
+  Sk.configure({output:outf, read:builtinRead}); 
+  (Sk.classroomGraphics || (Sk.classroomGraphics = {})).target = 'mycanvas';
+  var myPromise = Sk.misceval.asyncToPromise(function() {
+    return Sk.importMainWithBody("<stdin>", false, prog, true);
+  });
+  myPromise.then(function(mod) {
+    var codeOutput = document.getElementById("output").innerText;
+    speak('output:' + codeOutput + " " + document.getElementById("failure").innerText);
+    console.log('success');
+  },
+  function(err) {
+    document.getElementById("output").innerText = err.toString();
+    
+    if (prog == ""){
+      speak("You haven't coded anything yet!");
+    }
+    else{
+      speak("error" + err.toString());
+    }
+  });
   document.getElementById("output").style.visibility = "visible";
 } 

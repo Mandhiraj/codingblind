@@ -81,7 +81,7 @@ function doc_keyUp(e) {
             speak("Lesson " + lessonFocus + " point " + sectionFocus)
           }
           else if(!inLesson){
-            window.location.href = '/turtle?lesson='+lessonFocus+'&section='+sectionFocus;
+            window.location.href = '/classroom?lesson='+lessonFocus+'&section='+sectionFocus;
             inLesson = true;
             sectionFocus = 0;
             lessonFocus = 0;

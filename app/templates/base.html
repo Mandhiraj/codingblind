@@ -13,15 +13,24 @@
   <a href="javascript:void(0)" class="closebtn" onclick="changeNav()">&times;</a> 
   {% for lesson in maxLessons %}
   {% set outer_loop = loop %}
-    <a href="/turtle?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
+    <a href="/classroom?lesson={{loop.index}}&section=0">Lesson {{loop.index}}</a>
     <ul style="list-style:none">
         {% for i in range(lesson) %}
           <li class="active">
-            <a href="/turtle?lesson={{outer_loop.index}}&section={{i}}">§{{outer_loop.index}}.{{i}} </a>
+            <a href="/classroom?lesson={{outer_loop.index}}&section={{i}}">§{{outer_loop.index}}.{{i}} </a>
           </li>
         {% endfor %}
       </ul>
   {% endfor %}
+  <a href="/sandbox">Sandbox</a>
+  <ul style="list-style:none">
+    <li class="active">
+        <br>
+    </li> 
+    <li class="active">
+        <br>
+    </li> 
+  </ul>
 </div>
 
 <div id="main">
