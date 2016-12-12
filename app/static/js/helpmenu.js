@@ -58,12 +58,12 @@ function doc_keyUp(e) {
     if (e.altKey) {
       if (e.keyCode == 72) { // Alt+H
         if (isNavOpen)
-          closeNav();
+          changeNav();
         else{
           lessonFocus = 0;
           sectionFocus = 0;
           inLesson = true;
-          openNav();
+          changeNav();
         }
       }
       else if (isNavOpen){
