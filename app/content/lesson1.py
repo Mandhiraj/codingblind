@@ -4,7 +4,7 @@ section0 = {
 				learning how to print output, do simple math operations and use variables! To get started with the first section 
 				of this lesson, press alt and the down arrow key until you hear the prompt next lesson. Then press alt right.""",
 				'challenge' : '',
-				'examples' : [],
+				'examples' : '',
 				'hints' : [''],
 				'output' : ''
 }
@@ -17,10 +17,7 @@ section1 = {
 				'challenge' : """For this problem try printing out your favorite number. Now press alt and the up or down arrow key to navigate to hear the hint for the problem. 
 					For every section, if there is a hint you can navigate this way to hear it but we recommend that you try to complete the challenge on your own first.
 					Use the key combination alt and g to go to the editor and start coding.""",
-				'examples' : [{
-								'input' : 'print 27',
-								'output' : '27'
-							}],
+				'examples' : 'print 27',
 				'hints' : [
 							"""As you type different lines of code you can use the arrow keys to navigate through the lines of code. The line you are on will be 
 								automatically read to you. Go to the editor using the alt and g key combination and try out the challenge. Then use the arrow keys to hear the code you write. 
@@ -36,10 +33,7 @@ section2 = {
 					four basic math operations: addition, subtraction, multiplication, and division.
 					Let's say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
 				'challenge' : """For this challenge try printing out 10 times 20""",
-				'examples' : [{
-								'input' : 'print 1 + 2',
-								'output' : '3'
-							}],
+				'examples' : 'print 1 + 2',
 				'hints' : [
 							""""""
 						  ],
@@ -54,10 +48,7 @@ section3 = {
 					part of your expression.""",
 				'challenge' : """Try printing the solution to the math problem 5 minus 3 times 4 if we wanted the subtraction to be calculated 
 					before the multiplication. Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
-				'examples' : [{
-								'input' : 'print ( 1 + 1 ) * 2',
-								'output' : '4'
-							}],
+				'examples' : 'print ( 1 + 1 ) * 2',
 				'hints' : [
 							"""Remember that for the subtraction to be calculated before the multiplication you need to put an open parenthesis before 
 							5 minus 3 and put a close parenthesis after."""
@@ -75,10 +66,7 @@ section4 = {
 					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
 					Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
-				'examples' : [{
-								'input' : 'result = 1 + 2\nprint result',
-								'output' : '3'
-							}],
+				'examples' : 'result = 1 + 2\nprint result',
 				'hints' : [
 							''
 						  ],
@@ -95,10 +83,7 @@ section5 = {
 					get the same result.""",
 				'challenge' : """For this challenge, set a variable equal to 5 minus 3 then print out your variable multiplied by 4. 
 								You could listen to the example but try coding this on your own first.""",
-				'examples' : [{
-								'input' : 'result = 1 + 1\nprint result * 2',
-								'output' : '4'
-							}],
+				'examples' : 'result = 1 + 1\nprint result * 2',
 				'hints' : [
 							''
 						  ],

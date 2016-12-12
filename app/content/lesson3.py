@@ -6,7 +6,7 @@ section0 = {
 					we put blocks of code under certain conditions. So when those conditions are met, that block of code runs, 
 					otherwise it doesn't. Press alt n to learn more about conditional logic.""",
 				'challenge' : '',
-				'examples' : [],
+				'examples' : '',
 				'hints' : [''],
 				'output' : ''
 }

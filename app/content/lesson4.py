@@ -6,7 +6,7 @@ section0 = {
 		lesson to learn more.""",
 	'challenge' : '',
 	'code' : '',
-	'examples' : [],
+	'examples' : '',
 	'hints' : [''],
 	'output' : ''
 }
