@@ -17,7 +17,7 @@ section1 = {
 								They are: <, <=, >, >=, ==, !=. Expressions using these operators evaluate to True or False.
 								For example the expression 5 < 10 evaluates to True, however, the expression 5 > 10 evaluates to False.""",
 				'challenge' : """Practice using these operators. Print the result of an expression that results to true.""",
-				'examples' : 'answer = 5 < 10\nprint answer',
+				'examples' : 'answer = 5 < 10',
 				'hints' : [
 							''
 						  ],
@@ -35,7 +35,7 @@ section2 = {
 				'challenge' : """Go ahead and play with the code in the editor. Currently when you run it, nothing happens. 
 								Can you edit it so that \"It is raining!\" gets printed?""",
 				'code' :	"""rain = False\nif rain == True:\n\tprint \"It is raining!\"""",
-				'examples' : 'if True:\n\tprint \"Hello\"',
+				'examples' : 'if variable == True:',
 				'hints' : [
 							'You only need to change the variable rain.'
 						  ],
@@ -74,9 +74,7 @@ section4 = {
 								when the variable animal is set to something other than cat, dog, or duck. Make sure 
 								you can run the code and "Not a valid animal" gets printed.""",
 				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
-				'examples' : [{ 
-								'else:'	
-							}],
+				'examples' : 'else:',
 				'hints' : [
 							''
 						  ],

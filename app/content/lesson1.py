@@ -66,7 +66,7 @@ section4 = {
 					value you type the variable's name then '=' followed by what you wish to set your variable equal to.""",
 				'challenge' : """For this problem set a variable equal to 10 times 20 then print that variable. 
 					Remember, you can use alt and the arrow keys to navigate to the example and hear how to use a variable.""",
-				'examples' : 'result = 1 + 2\nprint result',
+				'examples' : 'result = 1 + 2',
 				'hints' : [
 							''
 						  ],
@@ -83,7 +83,7 @@ section5 = {
 					get the same result.""",
 				'challenge' : """For this challenge, set a variable equal to 5 minus 3 then print out your variable multiplied by 4. 
 								You could listen to the example but try coding this on your own first.""",
-				'examples' : 'result = 1 + 1\nprint result * 2',
+				'examples' : 'print result * 2',
 				'hints' : [
 							''
 						  ],
