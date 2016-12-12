@@ -106,5 +106,6 @@ var punctuationContent = {
   '}':'close curly brace',
   '[':'open square bracket',
   ']':'close square bracket',
-  '_':'underscore'
+  '_':'underscore',
+  '§':'section'
 }
