@@ -107,5 +107,5 @@ var punctuationContent = {
   '[':'open square bracket',
   ']':'close square bracket',
   '_':'underscore',
-  '§':'section'
+  '§':''
 }
