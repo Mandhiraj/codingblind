@@ -3,7 +3,7 @@ var PAGECONTENT = {
   CONTENT: {value: 2, name: "Content", htmlId: "Content"},
   CHALLENGE: {value: 3, name: "Challenge", htmlId: "Challenge"},
   EXAMPLE: {value: 4, name: "Example", htmlId: "Example"},
-  HINTS: {value: 5, name: "Hints", htmlId: "Hints"},
+  HINTS: {value: 5, name: "Hint", htmlId: "Hints"},
   RUNCODE: {value: 6, name: "Run Code", htmlId: "RunCode"},
   NEXTLESSON: {value: 7, name: "Next Lesson", htmlId: "NextLesson"}
 }
@@ -56,7 +56,7 @@ function doc_keyUp(e) {
         } else if(navFocus === PAGECONTENT.NEXTLESSON) {
             navFocus = PAGECONTENT.CONTENT;
         }
-        speak(navFocus.name);
+        speak_content(navFocus.name);
       }
       else if (e.keyCode == 40 && document.getElementById("sectionNum").innerText == 0) {
         if(navFocus === PAGECONTENT.HEADING){
@@ -66,11 +66,11 @@ function doc_keyUp(e) {
         } else if(navFocus === PAGECONTENT.NEXTLESSON) {
           navFocus = PAGECONTENT.HEADING;
         }
-        speak(navFocus.name);
+        speak_content(navFocus.name);
       }
       else if (e.keyCode == 38) {
         navFocus = decrementNavFocus(navFocus);
-        speak(navFocus.name);
+        speak_content(navFocus.name);
       }
       else if (e.keyCode == 39) {
         console.log(navFocus);
@@ -79,12 +79,12 @@ function doc_keyUp(e) {
           if (navFocus === PAGECONTENT.NEXTLESSON || navFocus === PAGECONTENT.RUNCODE)
             elt.click();
           else if (elt.innerText === "")
-            speak("There is no " + navFocus.name + " for this challenge");
+            speak_content("There is no " + navFocus.name + " for this challenge");
           else
-            speak(elt.innerText);
+            speak_content(elt.innerText);
         }
         else {
-          speak("This is the final lesson");
+          speak_content("This is the final lesson");
         }
       }
       else if (e.keyCode == 37) { //alt+left
@@ -93,17 +93,17 @@ function doc_keyUp(e) {
           if (navFocus === PAGECONTENT.NEXTLESSON)
             elt.click();
           else if (elt.innerText === "")
-            speak("There is no previous lesson for this challenge");
+            speak_content("There is no previous lesson for this challenge");
           else
-            speak(elt.innerText);
+            speak_content(elt.innerText);
         }
         else {
-          speak("This is the first lesson");
+          speak_content("This is the first lesson");
         }
       }
       else if (e.keyCode == 40) {
         navFocus = incrementNavFocus(navFocus);
-        speak(navFocus.name);
+        speak_content(navFocus.name);
       }
       else if(e.keyCode == 71){
         console.log('alt g');

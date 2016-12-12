@@ -36,18 +36,18 @@
 
 {% if content["challenge"] != '' %}
 <h3 style="font-style:italic">Challenge</h3>
-<p id="Challenge">{{content["challenge"]}}</p>
 {% endif %}
+<p id="Challenge">{{content["challenge"]}}</p>
 
 {% if content["examples"] != '' %}
 <h3 style="font-style:italic">Example</h3>
-<code id="Example">{{content["examples"]}}</code>
 {% endif %}
+<code id="Example">{{content["examples"]}}</code>
 
 {% if content["hints"][0] != '' %}
 <h3 style="font-style:italic">Hints</h3>
-<p id="Hints">{{content["hints"][0]}}</p>
 {% endif %}
+<p id="Hints">{{content["hints"][0]}}</p>
 
 </div>
 <div class="col-md-6">
@@ -80,6 +80,8 @@
 <div style="display: none;" id="LessonNumber">{{ lessonNum }}</div>
 <div style="display: none;" id="SectionNumber">{{ sectionNum }}</div>
 </div> <!--col-md-6-->
+<br/>
+<br/>
 </body> 
 </html>
 
