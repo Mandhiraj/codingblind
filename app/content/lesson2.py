@@ -12,10 +12,7 @@ section1 = {
 				'subheading' : 'Creating Strings',
 				'content' : 'Creating strings in python is as simple as surrounding a sequence of characters with either single or double quotes. It is important to note that you must be consistent with your choice. For example, you can either declare the string containing the dog by typing \'dog\' or \"dog\".',
 				'challenge' : 'To complete this section go ahead and create a string containing your name.',
-				'examples' : [{
-								'input' : ' \'Rashika Unjot\'',
-								'output' : '\'Rashika Unjot\''
-							}],
+				'examples' : ' \'Rashika Unjot\'',
 				'hints' : [
 							'Remember, a string in python is a sequence of characters that begin and end with quotation marks.'
 						  ],
@@ -32,10 +29,7 @@ section2 = {
 				   				Finally, create a variable called name and store a string containing your full name by
 				    			concatenating the strings contained in first and last. Don\'t forget to add a space
 				    			in between your first and last name.""",
-				'examples' : [{
-								'input' : '\'Jerome\' + \' \' + \'Tinkle\'' ,
-								'output' : ' \'Jerome Tinkle\''
-							}],
+				'examples' : '\'Jerome\' + \' \' + \'Tinkle\'',
 				'hints' : [
 							"""Remember, to declare a variable you must first type the name of the variable and then assign a value. In this case the value is a string.
 								In example, favorite_movie = \'Frozen\' would create a variable called favorite_movie with its value equal to the string containing the word Frozen.

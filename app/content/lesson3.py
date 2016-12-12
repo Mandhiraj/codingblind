@@ -17,10 +17,7 @@ section1 = {
 								They are: <, <=, >, >=, ==, !=. Expressions using these operators evaluate to True or False.
 								For example the expression 5 < 10 evaluates to True, however, the expression 5 > 10 evaluates to False.""",
 				'challenge' : """Practice using these operators. Print the result of an expression that results to true.""",
-				'examples' : [{ 
-								'input' : 'answer = 5 < 10\nprint answer',
-								'output' : 'True'		
-							}],
+				'examples' : 'answer = 5 < 10\nprint answer',
 				'hints' : [
 							''
 						  ],
@@ -38,8 +35,7 @@ section2 = {
 				'challenge' : """Go ahead and play with the code in the editor. Currently when you run it, nothing happens. 
 								Can you edit it so that \"It is raining!\" gets printed?""",
 				'code' :	"""rain = False\nif rain == True:\n\tprint \"It is raining!\"""",
-				'examples' : [{ 
-							}],
+				'examples' : 'if True:\n\tprint \"Hello\"',
 				'hints' : [
 							'You only need to change the variable rain.'
 						  ],
@@ -57,8 +53,7 @@ section3 = {
 				'challenge' : """Add an elif statement to the code in the editor such that when the value of animal is set to
 								cow, moo gets printed.""",
 				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
-				'examples' : [{ 	
-							}],
+				'examples' : 'elif variable == True:',
 				'hints' : [
 							''
 						  ],
@@ -80,7 +75,7 @@ section4 = {
 								you can run the code and "Not a valid animal" gets printed.""",
 				'code' :	"""animal = \"cat\"\nif animal == \"cat\":\n\tprint \"meow\"\nelif animal == \"dog\":\n\tprint \"bark\"\nelif animal == \"duck\":\n\tprint \"quack\"""",
 				'examples' : [{ 
-								''	
+								'else:'	
 							}],
 				'hints' : [
 							''
@@ -97,9 +92,7 @@ section5 = {
 							get a better understanding when you check out the code in the editor.""",
 				'challenge' : """Change the variables rain and wind so that "It is storming!" gets printed.""",
 				'code' :	"""rain = False\nwind = False\nif rain == True and wind == True:\n\tprint \"It is storming!\"""",
-				'examples' : [{ 
-								''
-							}],
+				'examples' : 'if hot == True and cold == False:',
 				'hints' : [
 							'Remember that both variables need to be true in order for the whole expression to be true.'
 						  ],
@@ -114,9 +107,7 @@ section6 = {
 							   in the editor to get a better understanding.""",
 				'challenge' : """Change the variables rain and wind so that "It may be storming" gets printed.""",
 				'code' :	"""rain = False\nwind = False\nif rain == True or wind == True:\n\tprint \"It may be storming\"""",
-				'examples' : [{ 
-								''
-							}],
+				'examples' : 'if hot == True or cold == True:',
 				'hints' : [
 							''
 						  ],
