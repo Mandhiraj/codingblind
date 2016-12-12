@@ -32,7 +32,7 @@ section2 = {
 					for doing math because of their incredible speed. You can use the plus, dash, asterisk, or slash keys to do the 
 					four basic math operations: addition, subtraction, multiplication, and division.
 					Say we wanted to know what one plus two was. We could simply type the line print 1 + 2.""",
-				'challenge' : """For this challenge try printing out 10 times 20""",
+				'challenge' : """For this challenge try printing out 10 times 20. Remember you can use the key combination alt and g to go to the editor to start coding.""",
 				'examples' : 'print 1 + 2',
 				'hints' : [
 							""""""
