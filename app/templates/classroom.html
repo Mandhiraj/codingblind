@@ -21,20 +21,34 @@
 	window.onpageshow = read_heading;
 </script>
 
-</head> 
+</head>
+
+<style>
+.Content, .Challenge, .Example, .Hints {
+	font-size:32pt;
+}
+</style>
+
 <body> 
 <div class="col-md-6">
 <h1 id="Heading">§{{lessonNum}}.{{sectionNum}} <span id="subheading">{{content["subheading"]}}</span></h1>
 <p id="Content">{{content["content"]}}</p>
+
 {% if content["challenge"] != '' %}
 <h3 style="font-style:italic">Challenge</h3>
-{% endif %}
 <p id="Challenge">{{content["challenge"]}}</p>
-<p id="Example">{{content["example"]}}</p>
+{% endif %}
+
+{% if content["examples"] != '' %}
+<h3 style="font-style:italic">Example</h3>
+<code id="Example">{{content["examples"]}}</code>
+{% endif %}
+
 {% if content["hints"][0] != '' %}
 <h3 style="font-style:italic">Hints</h3>
-{% endif %}
 <p id="Hints">{{content["hints"][0]}}</p>
+{% endif %}
+
 </div>
 <div class="col-md-6">
 <form> 
