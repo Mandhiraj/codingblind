@@ -1,20 +1,24 @@
 var isNavOpen = false;
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    speak("You have opened the menu," + helpText);
-    isNavOpen = true;
+function changeNav() {
+    if(isNavOpen) {
+     document.getElementById("mySidenav").style.width = "0px";
+      document.getElementById("main").style.marginLeft = "0px";
+      document.body.style.backgroundColor = "white";
+      speak("You have closed the menu");
+      isNavOpen = false;     
+    } else {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      speak("You have opened the menu," + helpText);
+      isNavOpen = true;
+    }
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
-    speak("You have closed the menu");
-    isNavOpen = false;
+
 }
 
 var lessonFocus = 0;

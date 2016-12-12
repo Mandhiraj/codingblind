@@ -48,11 +48,32 @@ function doc_keyUp(e) {
   e.preventDefault();
   if (e.altKey) {
     if(!isNavOpen){
-      if (e.keyCode == 38) {
+      if (e.keyCode == 38 && document.getElementById("sectionNum").innerText == 0) {
+        if(navFocus === PAGECONTENT.HEADING){
+            navFocus = PAGECONTENT.NEXTLESSON;
+        } else if(navFocus === PAGECONTENT.CONTENT) {
+            navFocus = PAGECONTENT.HEADING;
+        } else if(navFocus === PAGECONTENT.NEXTLESSON) {
+            navFocus = PAGECONTENT.CONTENT;
+        }
+        speak(navFocus.name);
+      }
+      else if (e.keyCode == 40 && document.getElementById("sectionNum").innerText == 0) {
+        if(navFocus === PAGECONTENT.HEADING){
+          navFocus = PAGECONTENT.CONTENT;
+        } else if(navFocus === PAGECONTENT.CONTENT) {
+          navFocus = PAGECONTENT.NEXTLESSON;
+        } else if(navFocus === PAGECONTENT.NEXTLESSON) {
+          navFocus = PAGECONTENT.HEADING;
+        }
+        speak(navFocus.name);
+      }
+      else if (e.keyCode == 38) {
         navFocus = decrementNavFocus(navFocus);
         speak(navFocus.name);
       }
       else if (e.keyCode == 39) {
+        console.log(navFocus);
         var elt = document.getElementById(navFocus.htmlId);
         if (elt !== null) {
           if (navFocus === PAGECONTENT.NEXTLESSON || navFocus === PAGECONTENT.RUNCODE)
@@ -62,8 +83,9 @@ function doc_keyUp(e) {
           else
             speak(elt.innerText);
         }
-        else
+        else {
           speak("This is the final lesson");
+        }
       }
       else if (e.keyCode == 37) { //alt+left
         var elt = document.getElementById("PrevLesson");
@@ -75,8 +97,9 @@ function doc_keyUp(e) {
           else
             speak(elt.innerText);
         }
-        else
+        else {
           speak("This is the first lesson");
+        }
       }
       else if (e.keyCode == 40) {
         navFocus = incrementNavFocus(navFocus);
@@ -92,18 +115,3 @@ function doc_keyUp(e) {
 
 // register the handler
 document.addEventListener('keyup', doc_keyUp, false);
-
-// var msg = new SpeechSynthesisUtterance();
-// msg.lang = 'en-US';
-// msg.voiceURI = 'native';
-// msg.volume = 1;
-// msg.rate = 0.8;
-// msg.pitch = 1.1;
-// function speak(text) {
-//   speechSynthesis.pause();
-//   speechSynthesis.cancel();
-//   var msg = new SpeechSynthesisUtterance();
-//   msg.text = text;
-//   speechSynthesis.speak(msg);
-//   speechSynthesis.resume();
-// }

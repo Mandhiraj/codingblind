@@ -40,6 +40,5 @@ window.onload = function () {
     editor.on("cursorActivity", cursorChanged);
     editor.on("focus", editorFocused); // read number of lines and current line.
     editor.on("blur", editorBlurred); // read number of lines and current line.
-
 }
 
