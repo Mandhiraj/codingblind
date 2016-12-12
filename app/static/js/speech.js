@@ -44,7 +44,7 @@ function speak_content(text) {
 }
 
 function speak_line(ln) {
-  speak_punc("line " + ln + " " + editor.getLine(ln));
+  speak_code("line " + ln + " " + editor.getLine(ln));
 }
 
 function substitutePunctuationCode(text){
@@ -69,6 +69,7 @@ function substitutePunctuationContent(text){
 var punctuationCode = {
   '\t':'tab',
   ':':'colon',
+  ';':'semicolon',
   '\'':'quote',
   '\"':'double quote',
   '=':'equal',

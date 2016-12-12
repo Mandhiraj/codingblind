@@ -9,11 +9,13 @@ var cursorChanged = function(){
       prev_ln = tmp;
       speak_line(tmp);
     }
-    ch   = editor.getCursor().ch;
-    line = editor.doc.getLine(tmp);
-    console.log(ch);
-    if (ch >= 1){
-      speak_code(line[ch-1]);
+    else {
+      ch   = editor.getCursor().ch;
+      line = editor.doc.getLine(tmp);
+      console.log(ch);
+      if (ch >= 1){
+        speak_code(line[ch-1]);
+      }
     }
   }
 }
