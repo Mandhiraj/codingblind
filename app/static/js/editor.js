@@ -1,7 +1,7 @@
 var editor; 
-
 var prev_ln = 0;
 var focused = false;
+
 // speak the line number and then the contents of the line
 function speak_line(ln) {
   speak_punc("line " + ln + " " + editor.getLine(ln));
@@ -14,13 +14,19 @@ var cursorChanged = function(){
       prev_ln = tmp;
       speak_line(tmp);
     }
+    ch   = editor.getCursor().ch;
+    line = editor.doc.getLine(tmp);
+    console.log(line);
+    console.log(line[ch-1])
+    if (ch-1 > 0){
+      speak_punc(line[ch-1]);
+    }
   }
 }
 
 var editorFocused = function(){
   focused = true;
   speak_punc("There are " + editor.lineCount() + " lines in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
-  //speak_line(editor.getCursor().line)
 }
 
 var editorBlurred = function() {
