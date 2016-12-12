@@ -2,11 +2,6 @@ var editor;
 var prev_ln = 0;
 var focused = false;
 
-// speak the line number and then the contents of the line
-function speak_line(ln) {
-  speak_punc("line " + ln + " " + editor.getLine(ln));
-}
-
 var cursorChanged = function(){
   if(focused) {
     tmp = editor.getCursor().line;
@@ -16,17 +11,19 @@ var cursorChanged = function(){
     }
     ch   = editor.getCursor().ch;
     line = editor.doc.getLine(tmp);
-    console.log(line);
-    console.log(line[ch-1])
-    if (ch-1 > 0){
-      speak_punc(line[ch-1]);
+    console.log(ch);
+    if (ch >= 1){
+      speak_code(line[ch-1]);
     }
   }
 }
 
 var editorFocused = function(){
   focused = true;
-  speak_punc("There are " + editor.lineCount() + " lines in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
+  if(editor.lineCount() == 1)
+    speak_code("There is " + editor.lineCount() + " line in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
+  else
+    speak_code("There are " + editor.lineCount() + " lines in the editor. " + "line " + editor.getCursor().line + editor.getLine(editor.getCursor().line));
 }
 
 var editorBlurred = function() {
@@ -46,40 +43,3 @@ window.onload = function () {
 
 }
 
-function substitutePunctuation(text){
-  for (var i = 0; i < text.length; i++) {
-    if(text[i] in punctuation){
-      text = text.replace(text[i],' ' + punctuation[text[i]] +' ');
-    }
-  }  
-  return text;
-}
-
-function speak_punc(text) {
-  text = substitutePunctuation(text);
-
-  speak(text);
-}
-
-var punctuation = {
-  '\t':'tab',
-  ':':'colon',
-  '\'':'quote',
-  '\"':'double quote',
-  '=':'equal',
-  '+':'plus',
-  '-':'minus',
-  '<':'less than',
-  '>':'greater than',
-  '!':'exclamation mark',
-  '(':'open parantheses',
-  ')':'close parantheses',
-  '{':'open curly brace',
-  '}':'close curly brace',
-  '[':'open square bracket',
-  ']':'close square bracket',
-  ',':'comma',
-  '.':'dot',
-  '\n':'newline',
-  '_':'underscore'
-}

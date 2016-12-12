@@ -93,17 +93,17 @@ function doc_keyUp(e) {
 // register the handler
 document.addEventListener('keyup', doc_keyUp, false);
 
-var msg = new SpeechSynthesisUtterance();
-msg.lang = 'en-US';
-msg.voiceURI = 'native';
-msg.volume = 1;
-msg.rate = 0.8;
-msg.pitch = 1.1;
-function speak(text) {
-  speechSynthesis.pause();
-  speechSynthesis.cancel();
-  var msg = new SpeechSynthesisUtterance();
-  msg.text = text;
-  speechSynthesis.speak(msg);
-  speechSynthesis.resume();
-}
+// var msg = new SpeechSynthesisUtterance();
+// msg.lang = 'en-US';
+// msg.voiceURI = 'native';
+// msg.volume = 1;
+// msg.rate = 0.8;
+// msg.pitch = 1.1;
+// function speak(text) {
+//   speechSynthesis.pause();
+//   speechSynthesis.cancel();
+//   var msg = new SpeechSynthesisUtterance();
+//   msg.text = text;
+//   speechSynthesis.speak(msg);
+//   speechSynthesis.resume();
+// }
