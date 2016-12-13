@@ -24,4 +24,7 @@ def classroom():
 
 @app.route('/sandbox')
 def sandbox():
-	return render_template('sandbox.html')	
+	maxLessons = []
+	for lesson in lessons:
+		maxLessons.append(len(lesson["sections"]))
+	return render_template('sandbox.html', maxLessons = maxLessons)	
