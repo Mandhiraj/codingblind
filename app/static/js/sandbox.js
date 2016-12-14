@@ -17,7 +17,6 @@ var editorCursorChanged = function(){
     }
     ch   = editor.getCursor().ch;
     line = editor.doc.getLine(tmp);
-    console.log(ch);
     if (ch >= 1){
       speak_code(line[ch-1]);
     }
@@ -28,7 +27,6 @@ var filenameCursorChanged = function(){
   if(focusedfilename) {
     ch   = filename.getCursor().ch;
     line = filename.doc.getLine(tmp);
-    console.log(ch);
     if (ch >= 1){
       speak_code(line[ch-1]);
     }
@@ -133,7 +131,6 @@ function loadSavedCode() {
   programs = load('programs');
   if(programs == null)
     programs = [];
-  console.log(programs);
   $('#directory ul').empty();
   var name = document.getElementById("title"); 
   var prog = editor.getValue(); 
@@ -159,7 +156,6 @@ function loadCode(idx){
 }
 
 function saveCode() {
-  console.log('aasdfads')
   var name = filename.getValue(); 
   var prog = editor.getValue(); 
   file = {'filename': name, 'code': prog};
