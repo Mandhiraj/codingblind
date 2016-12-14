@@ -131,6 +131,9 @@ var programs = [];
 
 function loadSavedCode() {
   programs = load('programs');
+  if(programs == null)
+    programs = [];
+  console.log(programs);
   $('#directory ul').empty();
   var name = document.getElementById("title"); 
   var prog = editor.getValue(); 
