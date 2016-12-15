@@ -114,7 +114,11 @@ function runCode(output) {
     }
   });
 } 
-
+function deleteCode(idx) {
+  remove(programs[idx]['filename']);
+  loadSavedCode();
+}
+  
 
 
 function store(name, value) {
@@ -125,8 +129,20 @@ function load(name) {
   return JSON.parse(localStorage.getItem(name));
 }
 
-var programs = [];
+function remove(name){
+  var index = -1;
+  var programs = JSON.parse(localStorage.getItem("programs")) || {}; //fetch cart from storage
+  
+  for (var i = 0; i < programs.length; i++) { //loop over the collection
+    if (programs[i].filename === name) { //see if ids match
+      programs.splice(i, 1); //remove item from array
+      break; //exit loop
+    }
+  }
+  localStorage.setItem("programs", JSON.stringify(programs)); //set item back into storage
+} 
 
+var programs = [];
 function loadSavedCode() {
   programs = load('programs');
   if(programs == null)
@@ -137,11 +153,16 @@ function loadSavedCode() {
   for(i = 0; i < programs.length; ++i){
     $('#directory ul').append(
       $('<li>').attr('class','list-group-item').append(
-          $('<a>').attr('href','javascript:void(0)').attr('onclick','loadCode('+i+')').append(programs[i]['filename'])
+        $('<h4>').attr('id','filename').attr('style','display:inline').append(programs[i]['filename'])).append(
+          $('<div>').attr('style','text-align:right').append(
+            $('<button>').attr('onclick', 'loadCode('+i+')').append('load   ')).append(
+              $('<button>').attr('onclick', 'deleteCode('+i+')').append(' delete')
+            //$('<a>').attr('href','javascript:void(0)').attr('onclick','loadCode('+i+')').append('load')).append(
+              //  $('<a>').attr('href','javascript:void(0)').attr('onclick','deleteCode('+i+')').append(' delete')
+    )
     ));  
   }
 }
-
 function updateFilename(data){
     var cm = filename;
     var doc = cm.getDoc();
@@ -165,82 +186,112 @@ function saveCode() {
   loadSavedCode();
 }
 
-// var PAGECONTENT = {
-//   HEADING: {value: 1, name: "Heading", htmlId: "Heading"},
-//   SAVECODE: {value: 5, name: "Save Code", htmlId: "SaveCode"},
-//   RUNCODE: {value: 6, name: "Run Code", htmlId: "RunCode"},
-// }
+var PAGECONTENT = {
+  HEADING: {value: 1, name: "Heading", htmlId: "Heading"},
+  SAVECODE: {value: 2, name: "Save Code", htmlId: "SaveCode"},
+  RUNCODE: {value: 3, name: "Run Code", htmlId: "RunCode"},
+  LOADCODE: {value: 4, name: "Load Code", htmlId: "LoadCode"},
+  DELETECODE: {value: 5, name: "Delete Code", htmlId: "DeleteCode"},
+}
 
+var navFocus = PAGECONTENT.HEADING;
 
-// function incrementNavFocus(navFocus) {
-//   switch (navFocus.value) {
-//     case 2: return PAGECONTENT.HEADING;
-//     case 3: return PAGECONTENT.SAVECODE;
-//     case 1: return PAGECONTENT.RUNCODE;
-//   }
-// }
+function incrementNavFocus(navFocus) {
+  switch (navFocus.value) {
+    case 5: return PAGECONTENT.HEADING;
+    case 1: return PAGECONTENT.SAVECODE;
+    case 2: return PAGECONTENT.RUNCODE;
+    case 3: return PAGECONTENT.LOADCODE;
+    case 4: return PAGECONTENT.DELETECODE;
+  }
+}
 
-// function decrementNavFocus(navFocus) {
-//   switch (navFocus.value) {
-//     case 3: return PAGECONTENT.HEADING;
-//     case 1: return PAGECONTENT.SAVECODE;
-//     case 2: return PAGECONTENT.RUNCODE;
-//   }
-// }
+function decrementNavFocus(navFocus) {
+  switch (navFocus.value) {
+    case 2: return PAGECONTENT.HEADING;
+    case 3: return PAGECONTENT.SAVECODE;
+    case 4: return PAGECONTENT.RUNCODE;
+    case 5: return PAGECONTENT.LOADCODE;
+    case 1: return PAGECONTENT.DELETECODE;
+  }
+}
+var innerMenu = false;
+var fileIndex = 0;
+function doc_keyUp(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.altKey) {
+    if(!isNavOpen){
+      if (e.keyCode == 38) {
+        if (innerMenu) {
+          var lis = document.getElementById("directory").getElementsByTagName("li");
+          --fileIndex;
+          if (fileIndex < 0)
+            fileIndex = lis.length - 1;
+          console.log("hey");
+          speak_code(lis[fileIndex].innerText);
+        }
+        else {
+          navFocus = decrementNavFocus(navFocus);
+          speak(navFocus.name);
+        }
+      }
+      else if (e.keyCode == 39) { //alt+right
+        if (innerMenu) {
+          // make sure to exit the innerMenu
+          innerMenu = false;
+          var lis = document.getElementById("directory").getElementsByTagName("li");
+          if (navFocus == PAGECONTENT.LOADCODE) {
+            speak(lis[fileIndex].getElementsByTagName("h4")[0].innerText + " loaded successfully");
+            loadCode(fileIndex);
+          }
+          else {
+            speak(lis[fileIndex].getElementsByTagName("h4")[0].innerText + " deleted successfully");
+            deleteCode(fileIndex);
+          }
+        }
+        else if (navFocus == PAGECONTENT.LOADCODE || navFocus == PAGECONTENT.DELETECODE) {
+          var lis = document.getElementById("directory").getElementsByTagName("li");
+          if (lis.length) {
+            innerMenu = true;
+            fileIndex = 0;
+            speak_code(lis[fileIndex].getElementsByTagName("h4")[0].innerText);
+          }
+          else {
+            speak("You don't have any saved files");
+          }
 
-// function doc_keyUp(e) {
-//   e.preventDefault();
-//   if (e.altKey) {
-//     if(!isNavOpen){
-//       if (e.keyCode == 38) {
-//         navFocus = decrementNavFocus(navFocus);
-//         speak(navFocus.name);
-//       }
-//       else if (e.keyCode == 39) {
-//         console.log(avFocus);
-//         if(programsList) {
+        }
+        else if (navFocus == PAGECONTENT.SAVECODE || navFocus == PAGECONTENT.RUNCODE) {
+          document.getElementById(navFocus.htmlId).click();
+        }
+        else {
+          speak("Welcome to the Sandbox! Use ALT and the arrow keys to manage your program files");
+        }
+      }
+      else if (e.shiftKey && e.keyCode == 37) { //alt+left
+        innerMenu = false;
+        console.log("mfer");
+      }
+      else if (e.keyCode == 40) {
+        if (innerMenu) {
+          var lis = document.getElementById("directory").getElementsByTagName("li");
+          ++fileIndex;
+          if (fileIndex >= lis.length)
+            fileIndex = 0;
+          speak_code(lis[fileIndex].getElementsByTagName("h4")[0].innerText);
+        } 
+        else {
+          navFocus = incrementNavFocus(navFocus);
+          speak(navFocus.name);
+        }
+      }
+      else if(e.keyCode == 71){
+        editor.focus();
+      }
+    }
+  }
+}
 
-//         }
-//         else {
-//           var elt = document.getElementById(navFocus.htmlId);
-//           if (elt !== null) {
-//             if (navFocus === PAGECONTENT.SAVECODE || navFocus === PAGECONTENT.RUNCODE)
-//               elt.click();
-//             else if (elt.innerText === "")
-//               speak("There is no " + navFocus.name + " for this challenge");
-//             else
-//               speak(elt.innerText);
-//           }
-//           else {
-//             speak("This is the final lesson");
-//           }
-//         }
-//       }
-//       else if (e.keyCode == 37) { //alt+left
-//         var elt = document.getElementById("PrevLesson");
-//         if (elt !== null) {
-//           if (navFocus === PAGECONTENT.NEXTLESSON)
-//             elt.click();
-//           else if (elt.innerText === "")
-//             speak("There is no previous lesson for this challenge");
-//           else
-//             speak(elt.innerText);
-//         }
-//         else {
-//           speak("This is the first lesson");
-//         }
-//       }
-//       else if (e.keyCode == 40) {
-//         navFocus = incrementNavFocus(navFocus);
-//         speak(navFocus.name);
-//       }
-//       else if(e.keyCode == 71){
-//         console.log('alt g');
-//         editor.focus();
-//       }
-//     }
-//   }
-// }
-
-// // register the handler
-// document.addEventListener('keyup', doc_keyUp, false);
+// register the handler
+document.addEventListener('keyup', doc_keyUp, false);
