@@ -66,7 +66,7 @@ window.onload = function () {
     editor.on("blur", editorBlurred); // read number of lines and current line.
 
     filename = CodeMirror.fromTextArea(document.getElementById("title"),{
-          lineNumbers: true,
+          lineNumbers: false,
           theme: "monokai",
           mode:  "python",
           firstLineNumber: 0
@@ -91,6 +91,7 @@ function builtinRead(x) {
 }
 
 function runCode(output) { 
+  document.getElementById("output").style.visibility = "visible";
   var prog = editor.getValue();
   var mypre = document.getElementById("output"); 
   mypre.innerHTML = ''; 
@@ -102,7 +103,8 @@ function runCode(output) {
   });
   myPromise.then(function(mod) {
     var codeOutput = document.getElementById("output").innerText;
-    speak('output:' + codeOutput);
+    speak('output ' + codeOutput);
+
   },
   function(err) {
     document.getElementById("output").innerText = err.toString();
@@ -155,8 +157,8 @@ function loadSavedCode() {
       $('<li>').attr('class','list-group-item').append(
         $('<h4>').attr('id','filename').attr('style','display:inline').append(programs[i]['filename'])).append(
           $('<div>').attr('style','text-align:right').append(
-            $('<button>').attr('onclick', 'loadCode('+i+')').append('load   ')).append(
-              $('<button>').attr('onclick', 'deleteCode('+i+')').append(' delete')
+            $('<button>').attr('class','btn btn-primary').attr('onclick', 'loadCode('+i+')').append('load   ')).append(
+              $('<button>').attr('class','btn btn-secondary').attr('onclick', 'deleteCode('+i+')').append(' delete')
             //$('<a>').attr('href','javascript:void(0)').attr('onclick','loadCode('+i+')').append('load')).append(
               //  $('<a>').attr('href','javascript:void(0)').attr('onclick','deleteCode('+i+')').append(' delete')
     )
@@ -178,6 +180,10 @@ function loadCode(idx){
 
 function saveCode() {
   var name = filename.getValue(); 
+  if (name == '') {
+    speak("Please enter a filename before saving!");
+    return;
+  }
   var prog = editor.getValue(); 
   file = {'filename': name, 'code': prog};
   programs.push(file);
@@ -262,7 +268,7 @@ function doc_keyUp(e) {
           }
 
         }
-        else if (navFocus == PAGECONTENT.SAVECODE || navFocus == PAGECONTENT.RUNCODE) {
+        else if (navFocus == PAGECONTENT.RUNCODE || navFocus == PAGECONTENT.SAVECODE) {
           document.getElementById(navFocus.htmlId).click();
         }
         else {

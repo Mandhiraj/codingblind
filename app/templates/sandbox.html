@@ -16,33 +16,38 @@
 	$('#code').blur(function (event) {
     setTimeout(function () { $("#code").focus(); }, 20);});
 	window.onpageshow = loadSavedCode;
+	speak("Welcome to the Sandbox! Use ALT and the arrow keys to manage your program files");
 </script>
 
 </head> 
 <body> 
-<div id="directory" class="col-md-4" >
-	<h1 id="Heading">§ Personal Sandbox </h1>
+<div id="directory" class="col-md-3" >
+	<!-- <h1 id="Heading">Sandbox </h1> -->
 <!--     <ul style="list-style:none">
     </ul> -->
-    <h3 id="subheading">Saved Programs</h3>
+    <h3 id="subheading">My Projects</h3>
 	<ul class="list-group">
 
 	</ul>
-</div>
-<div class="col-md-8">
+</div><br/><br/>
+<div class="col-md-5"></div>
+<div class="col-md-1"><h4>Filename: </h4></div>
+<div class="col-md-3">
 <form> 
-<h3>Filename</h3>
+ 
 <textarea id="title" cols="40" rows="1">
-</textarea>
-<h3>Editor</h3>
-<textarea id="code" cols="40" rows="10">
+</textarea></div>
+<div class="col-md-3"></div><div class="col-md-9">
+
+<textarea id="code" cols="40" rows="25">
 </textarea><br /> 
 
-<button id="RunCode" class="btn btn-primary" style="float: right" type="button" onclick="runCode()" >Run Code</button> <br><br>
+<button id="RunCode" class="btn btn-primary" style="float: right" type="button" onclick="runCode()" >Run Code</button> 
+&nbsp; &nbsp;
 <button id="SaveCode" class="btn btn-secondary" style="float: right" type="button" onclick="saveCode()" >Save Code</button> <br><br>
 
 </form> 
-<pre id="output" style="visibility: visible"></pre> 
+<pre id="output" style="visibility: hidden"></pre> 
 
 <div id="mycanvas"></div>
 
