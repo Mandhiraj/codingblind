@@ -9,7 +9,7 @@ Clone repository and cd to main directory, then:
 * pip install -r requirements.txt
 * python run.py
 
-Website can be accessed at localhost:5000 or www.codingblind.gq
+Website can be accessed at localhost:5000 or www.codingblind.pascualy.org
 
 ## License
 
